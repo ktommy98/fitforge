@@ -14,9 +14,7 @@ import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
 import { generateClient } from "aws-amplify/data";
 import outputs from "../amplify_outputs.json";
-/**
- * @type {import('aws-amplify/data').Client<import('../amplify/data/resource').Schema>}
- */
+import { FaDumbbell } from "react-icons/fa"; // Súlyzós ikon
 
 Amplify.configure(outputs);
 const client = generateClient({
@@ -63,7 +61,27 @@ export default function App() {
           width="70%"
           margin="0 auto"
         >
-          <Heading level={1}>FitForge</Heading>
+          {/* Színes háttérrel ellátott cím egyedi betűtípussal */}
+          <div
+            style={{
+              backgroundColor: "#2c3e50", // Sötétkék háttér
+              color: "white", // Fehér szöveg
+              padding: "1rem 2rem",
+              borderRadius: "10px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "10px",
+              fontFamily: "'Bebas Neue', sans-serif", // Sportos betűtípus
+              letterSpacing: "2px", // Jobban kiemeli a szöveget
+              textTransform: "uppercase", // Nagybetűs cím
+            }}
+          >
+            <FaDumbbell />
+            <Heading level={1} style={{ margin: 0, fontWeight: "bold" }}>FitForge</Heading>
+            <FaDumbbell />
+          </div>
+
           <View as="form" margin="3rem 0" onSubmit={createFood}>
             <Flex
               direction="column"
