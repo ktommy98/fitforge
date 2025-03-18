@@ -15,7 +15,7 @@ import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
 import { generateClient } from "aws-amplify/data";
 import outputs from "../amplify_outputs.json";
-import { FaDumbbell } from "react-icons/fa";
+import { FaDumbbell, FaAppleAlt } from "react-icons/fa";
 
 Amplify.configure(outputs);
 const client = generateClient({
@@ -145,11 +145,33 @@ export default function App() {
             >
               Add
             </Button>
-
             </Flex>
           </View>
           <Divider />
-          <Heading level={2}>Food Tracking</Heading>
+          <div
+            style={{
+              backgroundColor: "#BF3131",
+              color: "white",
+              padding: "1rem 2rem",
+              borderRadius: "10px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "10px",
+              fontFamily: "'Anton', sans-serif",
+              letterSpacing: "2px",
+              textTransform: "uppercase",
+              marginTop: "2rem",
+              width: "fit-content",
+            }}
+          >
+            <FaAppleAlt style={{ color: "#7D0A0A", fontSize: "1.5rem" }} />
+            <Heading level={2} style={{ margin: 0, color: "#EEEEEE" }}>
+              Food Tracking
+            </Heading>
+            <FaAppleAlt style={{ color: "#7D0A0A", fontSize: "1.5rem" }} />
+          </div>
+
           <Grid
             margin="3rem 0"
             autoFlow="column"
@@ -198,7 +220,26 @@ export default function App() {
               </Flex>
             ))}
           </Grid>
-          <Button onClick={signOut}>Sign Out</Button>
+          <Button
+            onClick={signOut}
+            style={{
+              backgroundColor: "#BF3131",
+              color: "white",
+              border: "none",
+              padding: "0.6rem 1.2rem",
+              borderRadius: "5px",
+              fontWeight: "bold",
+              fontSize: "1rem",
+              cursor: "pointer",
+              transition: "background 0.3s ease-in-out",
+              marginTop: "2rem",
+            }}
+            onMouseOver={(e) => (e.target.style.backgroundColor = "#7D0A0A")}
+            onMouseOut={(e) => (e.target.style.backgroundColor = "#BF3131")}
+          >
+            Sign Out
+          </Button>
+
         </Flex>
       )}
     </Authenticator>
