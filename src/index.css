@@ -33,3 +33,18 @@
 .box:nth-child(3n + 3) {
   grid-column: 3;
 }
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    border-radius: 0;
+    margin-bottom: 1rem;
+  }
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}

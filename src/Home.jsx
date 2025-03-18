@@ -32,13 +32,11 @@ export default function Home() {
   async function createFood(event) {
     event.preventDefault();
     const form = new FormData(event.target);
-
     await client.models.Food.create({
       name: form.get("name"),
       amount: form.get("amount"),
       unit: form.get("unit"),
     });
-
     event.target.reset();
   }
 
@@ -49,11 +47,13 @@ export default function Home() {
   return (
     <Authenticator>
       {({ signOut }) => (
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", flexWrap: "wrap" }}>
           {/* Bal oldali menüsor */}
           <div
+            className="sidebar"
             style={{
               width: "250px",
+              minWidth: "250px",
               height: "95vh",
               backgroundColor: "#1E1E1E",
               color: "white",
@@ -71,32 +71,31 @@ export default function Home() {
             <Heading level={3} style={{ color: "#EAD196", textTransform: "uppercase" }}>
               Menu
             </Heading>
-            {/* Link a receptek oldalra */}
+            {/* Igényes, animált Recipes link ikonnal */}
             <a
-                href="/recipes"
-                style={{
-                    display: "flex",
-                    alignItems: "center",
-                    color: "white",
-                    textDecoration: "none",
-                    marginTop: "1rem",
-                    cursor: "pointer",
-                    fontSize: "1rem",
-                    transition: "all 0.3s ease",
-                }}
-                onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "scale(1.1)";
-                    e.currentTarget.style.color = "#EAD196";
-                }}
-                onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = "scale(1)";
-                    e.currentTarget.style.color = "white";
-                }}
-                >
-                <FaUtensils style={{ marginRight: "0.5rem" }} />
-                Recipes
-                </a>
-
+              href="/recipes"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                color: "white",
+                textDecoration: "none",
+                marginTop: "1rem",
+                cursor: "pointer",
+                fontSize: "1rem",
+                transition: "all 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.1)";
+                e.currentTarget.style.color = "#EAD196";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+                e.currentTarget.style.color = "white";
+              }}
+            >
+              <FaUtensils style={{ marginRight: "0.5rem" }} />
+              Recipes
+            </a>
             <div style={{ flexGrow: 1 }}></div>
             <Button
               onClick={signOut}
@@ -119,12 +118,15 @@ export default function Home() {
 
           {/* Jobbra tolt fő tartalom */}
           <Flex
+            className="main-content"
             justifyContent="center"
             alignItems="center"
             direction="column"
-            width="70%"
-            margin="0 auto"
-            style={{ marginLeft: "270px", padding: "1rem" }}
+            style={{
+              marginLeft: "270px",
+              padding: "1rem",
+              width: "100%",
+            }}
           >
             {/* FitForge fejléc */}
             <div
@@ -140,15 +142,10 @@ export default function Home() {
                 fontFamily: "'Anton', sans-serif",
                 letterSpacing: "2px",
                 textTransform: "uppercase",
+                marginBottom: "1rem",
               }}
             >
-              <Heading
-                level={1}
-                style={{
-                  margin: 1,
-                  color: "#EEEEEE",
-                }}
-              >
+              <Heading level={1} style={{ margin: 1, color: "#EEEEEE" }}>
                 <FaDumbbell style={{ marginLeft: "15px", color: "#EAD196" }} />
                 FitForge
                 <FaDumbbell style={{ marginRight: "15px", color: "#EAD196" }} />
