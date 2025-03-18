@@ -5,6 +5,7 @@ const schema = a.schema({
     .model({
       name:a.string(),
       amount: a.float(),
+      unit: a.string(),
     })
     .authorization((allow) => [allow.owner()]),
 });

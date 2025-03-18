@@ -9,12 +9,13 @@ import {
   View,
   Grid,
   Divider,
+  SelectField,
 } from "@aws-amplify/ui-react";
 import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
 import { generateClient } from "aws-amplify/data";
 import outputs from "../amplify_outputs.json";
-import { FaDumbbell } from "react-icons/fa"; // Súlyzós ikon
+import { FaDumbbell } from "react-icons/fa";
 
 Amplify.configure(outputs);
 const client = generateClient({
@@ -37,6 +38,7 @@ export default function App() {
     await client.models.Food.create({
       name: form.get("name"),
       amount: form.get("amount"),
+      unit: form.get("unit"),
     });
 
     event.target.reset();
@@ -61,26 +63,34 @@ export default function App() {
           width="70%"
           margin="0 auto"
         >
-          {/* Színes háttérrel ellátott cím egyedi betűtípussal */}
           <div
             style={{
-              backgroundColor: "#2c3e50", // Sötétkék háttér
-              color: "white", // Fehér szöveg
+              backgroundColor: "#BF3131",
+              color: "white",
               padding: "1rem 2rem",
               borderRadius: "10px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               gap: "10px",
-              fontFamily: "'Bebas Neue', sans-serif", // Sportos betűtípus
-              letterSpacing: "2px", // Jobban kiemeli a szöveget
-              textTransform: "uppercase", // Nagybetűs cím
+              fontFamily: "'Anton', sans-serif",
+              letterSpacing: "2px",
+              textTransform: "uppercase",
             }}
           >
-            <FaDumbbell />
-            <Heading level={1} style={{ margin: 0, fontWeight: "bold" }}>FitForge</Heading>
-            <FaDumbbell />
+            <Heading
+              level={1}
+              style={{ 
+                margin: 0, 
+                color: "#EEEEEE"
+              }}
+            >
+              <FaDumbbell style={{ marginLeft: "10px", color: "#EAD196" }} />
+              FitForge
+              <FaDumbbell style={{ marginRight: "10px", color: "#EAD196" }} />
+            </Heading>
           </div>
+
 
           <View as="form" margin="3rem 0" onSubmit={createFood}>
             <Flex
@@ -97,19 +107,45 @@ export default function App() {
                 variation="quiet"
                 required
               />
-              <TextField
-                name="amount"
-                placeholder="Food Amount"
-                label="Food Amount"
-                type="float"
-                labelHidden
-                variation="quiet"
-                required
-              />
+              
+              <Flex gap="1rem">
+                <TextField
+                  name="amount"
+                  placeholder="Food Amount"
+                  label="Food Amount"
+                  type="number"
+                  labelHidden
+                  variation="quiet"
+                  required
+                />
+                <SelectField name="unit" labelHidden required>
+                  <option value="g">Gramm (g)</option>
+                  <option value="kg">Kilogramm (kg)</option>
+                  <option value="ml">Milliliter (ml)</option>
+                  <option value="l">Liter (l)</option>
+                  <option value="db">Darab (db)</option>
+                </SelectField>
+              </Flex>
 
-              <Button type="submit" variation="primary">
-                Add
-              </Button>
+              <Button 
+              type="submit" 
+              variation="primary" 
+              style={{
+                backgroundColor: "#7D0A0A",
+                color: "white",
+                border: "none",
+                padding: "0.5rem 1rem",
+                borderRadius: "5px",
+                fontWeight: "bold",
+                cursor: "pointer",
+                transition: "background 0.3s ease-in-out",
+              }}
+              onMouseOver={(e) => e.target.style.backgroundColor = "#5A0707"}
+              onMouseOut={(e) => e.target.style.backgroundColor = "#7D0A0A"}
+            >
+              Add
+            </Button>
+
             </Flex>
           </View>
           <Divider />
@@ -136,14 +172,29 @@ export default function App() {
                 <View>
                   <Heading level="3">{food.name}</Heading>
                 </View>
-                <Text fontStyle="italic">{food.amount}</Text>
+                <Text fontStyle="italic">
+                  {food.amount} {food.unit}
+                </Text>
 
                 <Button
                   variation="destructive"
+                  style={{
+                    backgroundColor: "#7D0A0A",
+                    color: "white",
+                    border: "none",
+                    padding: "0.5rem 1rem",
+                    borderRadius: "5px",
+                    fontWeight: "bold",
+                    cursor: "pointer",
+                    transition: "background 0.3s ease-in-out",
+                  }}
+                  onMouseOver={(e) => e.target.style.backgroundColor = "#5A0707"}
+                  onMouseOut={(e) => e.target.style.backgroundColor = "#7D0A0A"} 
                   onClick={() => deleteFood(food)}
                 >
                   Remove
                 </Button>
+
               </Flex>
             ))}
           </Grid>
