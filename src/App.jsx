@@ -45,161 +45,89 @@ export default function App() {
   }
 
   async function deleteFood({ id }) {
-    const toBeDeletedFood = {
-      id,
-    };
-
-    await client.models.Food.delete(toBeDeletedFood);
+    await client.models.Food.delete({ id });
   }
 
   return (
     <Authenticator>
       {({ signOut }) => (
-        <Flex
-          className="App"
-          justifyContent="center"
-          alignItems="center"
-          direction="column"
-          width="70%"
-          margin="0 auto"
-        >
+        <div style={{ display: "flex" }}>
+          {/* Bal oldali sötét div */}
           <div
             style={{
-              backgroundColor: "#BF3131",
+              width: "250px",
+              height: "100vh",
+              backgroundColor: "#1E1E1E", // Sötét háttér
               color: "white",
-              padding: "1rem 2rem",
-              borderRadius: "10px",
+              padding: "1.5rem",
               display: "flex",
+              flexDirection: "column",
               alignItems: "center",
-              justifyContent: "center",
-              gap: "10px",
-              fontFamily: "'Anton', sans-serif",
-              letterSpacing: "2px",
-              textTransform: "uppercase",
+              position: "fixed",
+              left: 0,
+              top: 0,
             }}
           >
-            <Heading
-              level={1}
-              style={{ 
-                margin: 0, 
-                color: "#EEEEEE"
-              }}
-            >
-              <FaDumbbell style={{ marginLeft: "10px", color: "#EAD196" }} />
-              FitForge
-              <FaDumbbell style={{ marginRight: "10px", color: "#EAD196" }} />
+            <Heading level={3} style={{ color: "#EAD196", textTransform: "uppercase" }}>
+              Menu
             </Heading>
           </div>
 
-
-          <View as="form" margin="3rem 0" onSubmit={createFood}>
-            <Flex
-              direction="column"
-              justifyContent="center"
-              gap="2rem"
-              padding="2rem"
-            >
-              <TextField
-                name="name"
-                placeholder="Food Name"
-                label="Food Name"
-                labelHidden
-                variation="quiet"
-                required
-              />
-              
-              <Flex gap="1rem">
-                <TextField
-                  name="amount"
-                  placeholder="Food Amount"
-                  label="Food Amount"
-                  type="number"
-                  labelHidden
-                  variation="quiet"
-                  required
-                />
-                <SelectField name="unit" labelHidden required>
-                  <option value="g">Gramm (g)</option>
-                  <option value="kg">Kilogramm (kg)</option>
-                  <option value="ml">Milliliter (ml)</option>
-                  <option value="l">Liter (l)</option>
-                  <option value="db">Darab (db)</option>
-                </SelectField>
-              </Flex>
-
-              <Button 
-              type="submit" 
-              variation="primary" 
-              style={{
-                backgroundColor: "#7D0A0A",
-                color: "white",
-                border: "none",
-                padding: "0.5rem 1rem",
-                borderRadius: "5px",
-                fontWeight: "bold",
-                cursor: "pointer",
-                transition: "background 0.3s ease-in-out",
-              }}
-              onMouseOver={(e) => e.target.style.backgroundColor = "#5A0707"}
-              onMouseOut={(e) => e.target.style.backgroundColor = "#7D0A0A"}
-            >
-              Add
-            </Button>
-            </Flex>
-          </View>
-          <Divider />
-          <div
-            style={{
-              backgroundColor: "#BF3131",
-              color: "white",
-              padding: "1rem 2rem",
-              borderRadius: "10px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "10px",
-              fontFamily: "'Anton', sans-serif",
-              letterSpacing: "2px",
-              textTransform: "uppercase",
-              marginTop: "2rem",
-              width: "fit-content",
-            }}
-          >
-            <FaAppleAlt style={{ color: "#7D0A0A", fontSize: "1.5rem" }} />
-            <Heading level={2} style={{ margin: 0, color: "#EEEEEE" }}>
-              Food Tracking
-            </Heading>
-            <FaAppleAlt style={{ color: "#7D0A0A", fontSize: "1.5rem" }} />
-          </div>
-
-          <Grid
-            margin="3rem 0"
-            autoFlow="column"
+          {/* Eredeti oldal - jobbra tolva */}
+          <Flex
+            className="App"
             justifyContent="center"
-            gap="2rem"
-            alignContent="center"
+            alignItems="center"
+            direction="column"
+            width="70%"
+            margin="0 auto"
+            style={{ marginLeft: "270px", padding: "2rem" }} // Jobbra tolt tartalom
           >
-            {foods.map((food) => (
-              <Flex
-                key={food.id || food.name}
-                direction="column"
-                justifyContent="center"
-                alignItems="center"
-                gap="2rem"
-                border="1px solid #ccc"
-                padding="2rem"
-                borderRadius="5%"
-                className="box"
+            {/* FitForge fejléc */}
+            <div
+              style={{
+                backgroundColor: "#BF3131",
+                color: "white",
+                padding: "1rem 2rem",
+                borderRadius: "10px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "10px",
+                fontFamily: "'Anton', sans-serif",
+                letterSpacing: "2px",
+                textTransform: "uppercase",
+              }}
+            >
+              <Heading
+                level={1}
+                style={{
+                  margin: 0,
+                  color: "#EEEEEE",
+                }}
               >
-                <View>
-                  <Heading level="3">{food.name}</Heading>
-                </View>
-                <Text fontStyle="italic">
-                  {food.amount} {food.unit}
-                </Text>
+                <FaDumbbell style={{ marginLeft: "10px", color: "#EAD196" }} />
+                FitForge
+                <FaDumbbell style={{ marginRight: "10px", color: "#EAD196" }} />
+              </Heading>
+            </div>
 
+            {/* Űrlap az étel hozzáadásához */}
+            <View as="form" margin="3rem 0" onSubmit={createFood}>
+              <Flex direction="column" justifyContent="center" gap="2rem" padding="2rem">
+                <TextField name="name" placeholder="Food Name" labelHidden variation="quiet" required />
+                <Flex gap="1rem">
+                  <TextField name="amount" placeholder="Food Amount" type="number" labelHidden variation="quiet" required />
+                  <SelectField name="unit" labelHidden required>
+                    <option value="g">Gramm (g)</option>
+                    <option value="kg">Kilogramm (kg)</option>
+                    <option value="ml">Milliliter (ml)</option>
+                    <option value="l">Liter (l)</option>
+                    <option value="db">Darab (db)</option>
+                  </SelectField>
+                </Flex>
                 <Button
-                  variation="destructive"
+                  type="submit"
                   style={{
                     backgroundColor: "#7D0A0A",
                     color: "white",
@@ -210,37 +138,95 @@ export default function App() {
                     cursor: "pointer",
                     transition: "background 0.3s ease-in-out",
                   }}
-                  onMouseOver={(e) => e.target.style.backgroundColor = "#5A0707"}
-                  onMouseOut={(e) => e.target.style.backgroundColor = "#7D0A0A"} 
-                  onClick={() => deleteFood(food)}
                 >
-                  Remove
+                  Add
                 </Button>
-
               </Flex>
-            ))}
-          </Grid>
-          <Button
-            onClick={signOut}
-            style={{
-              backgroundColor: "#BF3131",
-              color: "white",
-              border: "none",
-              padding: "0.6rem 1.2rem",
-              borderRadius: "5px",
-              fontWeight: "bold",
-              fontSize: "1rem",
-              cursor: "pointer",
-              transition: "background 0.3s ease-in-out",
-              marginTop: "2rem",
-            }}
-            onMouseOver={(e) => (e.target.style.backgroundColor = "#7D0A0A")}
-            onMouseOut={(e) => (e.target.style.backgroundColor = "#BF3131")}
-          >
-            Sign Out
-          </Button>
+            </View>
 
-        </Flex>
+            <Divider />
+
+            {/* Food Tracking fejléc */}
+            <div
+              style={{
+                backgroundColor: "#BF3131",
+                color: "white",
+                padding: "1rem 2rem",
+                borderRadius: "10px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "10px",
+                fontFamily: "'Anton', sans-serif",
+                letterSpacing: "2px",
+                textTransform: "uppercase",
+                marginTop: "2rem",
+                width: "fit-content",
+              }}
+            >
+              <FaAppleAlt style={{ color: "#7D0A0A", fontSize: "1.5rem" }} />
+              <Heading level={2} style={{ margin: 0, color: "#EEEEEE" }}>
+                Food Tracking
+              </Heading>
+              <FaAppleAlt style={{ color: "#7D0A0A", fontSize: "1.5rem" }} />
+            </div>
+
+            {/* Ételek listázása */}
+            <Grid margin="3rem 0" autoFlow="column" justifyContent="center" gap="2rem" alignContent="center">
+              {foods.map((food) => (
+                <Flex
+                  key={food.id || food.name}
+                  direction="column"
+                  justifyContent="center"
+                  alignItems="center"
+                  gap="2rem"
+                  border="1px solid #ccc"
+                  padding="2rem"
+                  borderRadius="5%"
+                  className="box"
+                >
+                  <View>
+                    <Heading level="3">{food.name}</Heading>
+                  </View>
+                  <Text fontStyle="italic">{food.amount} {food.unit}</Text>
+                  <Button
+                    style={{
+                      backgroundColor: "#7D0A0A",
+                      color: "white",
+                      border: "none",
+                      padding: "0.5rem 1rem",
+                      borderRadius: "5px",
+                      fontWeight: "bold",
+                      cursor: "pointer",
+                      transition: "background 0.3s ease-in-out",
+                    }}
+                    onClick={() => deleteFood(food)}
+                  >
+                    Remove
+                  </Button>
+                </Flex>
+              ))}
+            </Grid>
+
+            <Button
+              onClick={signOut}
+              style={{
+                backgroundColor: "#BF3131",
+                color: "white",
+                border: "none",
+                padding: "0.6rem 1.2rem",
+                borderRadius: "5px",
+                fontWeight: "bold",
+                fontSize: "1rem",
+                cursor: "pointer",
+                transition: "background 0.3s ease-in-out",
+                marginTop: "2rem",
+              }}
+            >
+              Sign Out
+            </Button>
+          </Flex>
+        </div>
       )}
     </Authenticator>
   );
