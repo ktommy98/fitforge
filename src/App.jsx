@@ -56,7 +56,7 @@ export default function App() {
           <div
             style={{
               width: "250px",
-              height: "100vh",
+              height: "95vh",
               backgroundColor: "#1E1E1E", // Sötét háttér
               color: "white",
               padding: "1.5rem",
@@ -64,13 +64,35 @@ export default function App() {
               flexDirection: "column",
               alignItems: "center",
               position: "fixed",
-              left: 0,
-              top: 0,
+              left: "10px", // Egy kis távolság a bal oldaltól
+              top: "10px", // Egy kis távolság a tetejétől
+              borderRadius: "20px", // Lekerekített szélek
+              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)", // Enyhe árnyék
             }}
           >
             <Heading level={3} style={{ color: "#EAD196", textTransform: "uppercase" }}>
               Menu
             </Heading>
+            <div style={{ flexGrow: 1 }}></div>
+            <Button
+              onClick={signOut}
+              style={{
+                backgroundColor: "#BF3131",
+                color: "white",
+                border: "none",
+                padding: "0.6rem 1.2rem",
+                borderRadius: "5px",
+                fontWeight: "bold",
+                fontSize: "1rem",
+                cursor: "pointer",
+                transition: "background 0.3s ease-in-out",
+                marginTop: "2rem",
+              }}
+              onMouseOver={(e) => (e.target.style.backgroundColor = "#7D0A0A")}
+              onMouseOut={(e) => (e.target.style.backgroundColor = "#BF3131")}
+            >
+              Sign Out
+            </Button>
           </div>
 
           {/* Eredeti oldal - jobbra tolva */}
@@ -81,14 +103,14 @@ export default function App() {
             direction="column"
             width="70%"
             margin="0 auto"
-            style={{ marginLeft: "270px", padding: "2rem" }} // Jobbra tolt tartalom
+            style={{ marginLeft: "270px", padding: "1rem" }} // Jobbra tolt tartalom
           >
             {/* FitForge fejléc */}
             <div
               style={{
                 backgroundColor: "#BF3131",
                 color: "white",
-                padding: "1rem 2rem",
+                padding: "2rem 13rem",
                 borderRadius: "10px",
                 display: "flex",
                 alignItems: "center",
@@ -102,13 +124,13 @@ export default function App() {
               <Heading
                 level={1}
                 style={{
-                  margin: 0,
+                  margin: 1,
                   color: "#EEEEEE",
                 }}
               >
-                <FaDumbbell style={{ marginLeft: "10px", color: "#EAD196" }} />
+                <FaDumbbell style={{ marginLeft: "15px", color: "#EAD196" }} />
                 FitForge
-                <FaDumbbell style={{ marginRight: "10px", color: "#EAD196" }} />
+                <FaDumbbell style={{ marginRight: "15px", color: "#EAD196" }} />
               </Heading>
             </div>
 
@@ -208,23 +230,7 @@ export default function App() {
               ))}
             </Grid>
 
-            <Button
-              onClick={signOut}
-              style={{
-                backgroundColor: "#BF3131",
-                color: "white",
-                border: "none",
-                padding: "0.6rem 1.2rem",
-                borderRadius: "5px",
-                fontWeight: "bold",
-                fontSize: "1rem",
-                cursor: "pointer",
-                transition: "background 0.3s ease-in-out",
-                marginTop: "2rem",
-              }}
-            >
-              Sign Out
-            </Button>
+            
           </Flex>
         </div>
       )}
