@@ -11,20 +11,32 @@ import Recipes from "./Recipes";
 
 function AppRoutes() {
   const { authStatus } = useAuthenticator((context) => [context.authStatus]);
-  const [profileCompleted, setProfileCompleted] = useState(false);
+  // Inicializáld a profileCompleted értéket a localStorage-ból
+  const [profileCompleted, setProfileCompleted] = useState(() => {
+    return localStorage.getItem("profileCompleted") === "true";
+  });
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Csak akkor redirectelj, ha a felhasználó be van jelentkezve, és a profil NINCS kitöltve
     if (authStatus === "authenticated" && !profileCompleted) {
       navigate("/profile-setup");
     }
-  }, [authStatus, profileCompleted]);
+  }, [authStatus, profileCompleted, navigate]);
 
   return (
     <Routes>
-      <Route path="/profile-setup" element={
-        <ProfileSetup onProfileComplete={() => setProfileCompleted(true)} />
-      } />
+      <Route
+        path="/profile-setup"
+        element={
+          <ProfileSetup
+            onProfileComplete={() => {
+              setProfileCompleted(true);
+              localStorage.setItem("profileCompleted", "true");
+            }}
+          />
+        }
+      />
       <Route path="/" element={<Home />} />
       <Route path="/recipes" element={<Recipes />} />
       <Route path="/workoutplan" element={<WorkoutPlan />} />
