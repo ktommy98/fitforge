@@ -15,7 +15,7 @@ import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
 import { generateClient } from "aws-amplify/data";
 import outputs from "../amplify_outputs.json";
-import { FaDumbbell, FaAppleAlt, FaUtensils } from "react-icons/fa";
+import { FaDumbbell, FaAppleAlt, FaUtensils, FaRunning } from "react-icons/fa";
 
 Amplify.configure(outputs);
 const client = generateClient({ authMode: "userPool" });
@@ -47,13 +47,11 @@ export default function Home() {
   return (
     <Authenticator>
       {({ signOut }) => (
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
+        <div style={{ display: "flex" }}>
           {/* Bal oldali menüsor */}
           <div
-            className="sidebar"
             style={{
               width: "250px",
-              minWidth: "250px",
               height: "95vh",
               backgroundColor: "#1E1E1E",
               color: "white",
@@ -71,7 +69,7 @@ export default function Home() {
             <Heading level={3} style={{ color: "#EAD196", textTransform: "uppercase" }}>
               Menu
             </Heading>
-            {/* Igényes, animált Recipes link ikonnal */}
+            {/* Recipes link animációval és ikonnal */}
             <a
               href="/recipes"
               style={{
@@ -96,6 +94,31 @@ export default function Home() {
               <FaUtensils style={{ marginRight: "0.5rem" }} />
               Recipes
             </a>
+            {/* Workout Plan link animációval és ikonnal */}
+            <a
+              href="/workoutplan"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                color: "white",
+                textDecoration: "none",
+                marginTop: "1rem",
+                cursor: "pointer",
+                fontSize: "1rem",
+                transition: "all 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.1)";
+                e.currentTarget.style.color = "#EAD196";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+                e.currentTarget.style.color = "white";
+              }}
+            >
+              <FaRunning style={{ marginRight: "0.5rem" }} />
+              Workout Plan
+            </a>
             <div style={{ flexGrow: 1 }}></div>
             <Button
               onClick={signOut}
@@ -116,9 +139,8 @@ export default function Home() {
             </Button>
           </div>
 
-          {/* Jobbra tolt fő tartalom */}
+          {/* Fő tartalom */}
           <Flex
-            className="main-content"
             justifyContent="center"
             alignItems="center"
             direction="column"
@@ -142,7 +164,6 @@ export default function Home() {
                 fontFamily: "'Anton', sans-serif",
                 letterSpacing: "2px",
                 textTransform: "uppercase",
-                marginBottom: "1rem",
               }}
             >
               <Heading level={1} style={{ margin: 1, color: "#EEEEEE" }}>
