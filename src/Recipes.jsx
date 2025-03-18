@@ -234,14 +234,14 @@ export default function Recipes() {
               <Text style={{ marginBottom: "1rem" }}>
                 <strong>Adag:</strong> {recipe.serving}
               </Text>
-              <Text style={{ marginBottom: "1rem" }}>
+              <Text>
                 <strong>Hozzávalók:</strong>
-                <ul style={{ marginLeft: "1.5rem", marginTop: "0.5rem" }}>
-                  {recipe.ingredients.map((ingredient, idx) => (
-                    <li key={idx}>{ingredient}</li>
-                  ))}
-                </ul>
               </Text>
+              <ul style={{ marginLeft: "1.5rem", marginTop: "0.5rem" }}>
+                {recipe.ingredients.map((ingredient, idx) => (
+                  <li key={idx}>{ingredient}</li>
+                ))}
+              </ul>
               <Text style={{ marginBottom: "1rem" }}>
                 <strong>Elkészítés:</strong> {recipe.preparation}
               </Text>
@@ -278,7 +278,6 @@ export default function Recipes() {
         </Button>
       </Flex>
 
-      {/* Vissza a főoldalra gomb – nem lila, hanem a #7D0A0A színnel */}
       <Button
         style={{
           ...buttonStyle,

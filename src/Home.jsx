@@ -1,4 +1,3 @@
-// Home.jsx
 import { useState, useEffect } from "react";
 import {
   Authenticator,
@@ -67,9 +66,9 @@ export default function Home() {
             }}
           >
             <Heading level={3} style={{ color: "#EAD196", textTransform: "uppercase" }}>
-              Menu
+              Dashboard
             </Heading>
-            {/* Recipes link animációval és ikonnal */}
+            {/* Recipes link */}
             <a
               href="/recipes"
               style={{
@@ -94,7 +93,7 @@ export default function Home() {
               <FaUtensils style={{ marginRight: "0.5rem" }} />
               Recipes
             </a>
-            {/* Workout Plan link animációval és ikonnal */}
+            {/* Workout Plan link */}
             <a
               href="/workoutplan"
               style={{
@@ -145,9 +144,9 @@ export default function Home() {
             alignItems="center"
             direction="column"
             style={{
-              marginLeft: "270px",
-              padding: "1rem",
-              width: "100%",
+                marginLeft: "270px",
+                padding: "1rem",
+                width: "100%",
             }}
           >
             {/* FitForge fejléc */}
@@ -155,8 +154,8 @@ export default function Home() {
               style={{
                 backgroundColor: "#BF3131",
                 color: "white",
-                padding: "2rem 13rem",
-                borderRadius: "10px",
+                padding: "2rem 15rem",
+                borderRadius: "20px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
