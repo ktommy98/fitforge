@@ -1,3 +1,4 @@
+// Home.jsx
 import { useState, useEffect } from "react";
 import {
   Authenticator,
@@ -16,17 +17,86 @@ import { generateClient } from "aws-amplify/data";
 import outputs from "../amplify_outputs.json";
 import { FaDumbbell, FaAppleAlt, FaUtensils, FaRunning } from "react-icons/fa";
 
+// ---- RECHARTS IMPORTOK ----
+import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
+
 Amplify.configure(outputs);
 const client = generateClient({ authMode: "userPool" });
 
+// Alapszínek a chart-hoz, illeszkedve a pirosas, bordós designhoz
+const CHART_COLORS = ["#BF3131", "#EAD196", "#7D0A0A"];
+
+// Számítás segédfüggvény (Mifflin-St Jeor)
+function calculateTDEE({ gender, age, height, weight, exerciseLevel }) {
+  const w = parseFloat(weight);
+  const h = parseFloat(height);
+  const a = parseFloat(age);
+
+  let BMR = 0;
+  if (gender === "male") {
+    BMR = 10 * w + 6.25 * h - 5 * a + 5;
+  } else {
+    // female
+    BMR = 10 * w + 6.25 * h - 5 * a - 161;
+  }
+
+  let activityFactor = 1.2; // beginner
+  if (exerciseLevel === "intermediate") activityFactor = 1.375;
+  if (exerciseLevel === "advanced") activityFactor = 1.55;
+
+  return BMR * activityFactor;
+}
+
+// Makrók kiszámítása (30% fehérje, 45% szénhidrát, 25% zsír)
+function calculateMacros(tdee) {
+  const proteinKcal = tdee * 0.3;
+  const carbsKcal = tdee * 0.45;
+  const fatKcal = tdee * 0.25;
+
+  const proteinGrams = proteinKcal / 4;
+  const carbsGrams = carbsKcal / 4;
+  const fatGrams = fatKcal / 9;
+
+  return {
+    tdee: Math.round(tdee),
+    proteinGrams: Math.round(proteinGrams),
+    carbsGrams: Math.round(carbsGrams),
+    fatGrams: Math.round(fatGrams),
+  };
+}
+
 export default function Home() {
   const [foods, setFoods] = useState([]);
+  const [profileData, setProfileData] = useState(null);
+  const [macros, setMacros] = useState(null);
 
   useEffect(() => {
+    // Profile adatok betöltése localStorage-ból
+    const stored = localStorage.getItem("profileData");
+    if (stored) {
+      const parsed = JSON.parse(stored);
+      setProfileData(parsed);
+
+      // Kiszámítjuk a TDEE-t és a makrókat
+      const tdee = calculateTDEE(parsed);
+      const macroRes = calculateMacros(tdee);
+      setMacros(macroRes);
+    }
+
+    // Food adatok betöltése
     client.models.Food.observeQuery().subscribe({
       next: (data) => setFoods([...data.items]),
     });
   }, []);
+
+  // Recharts donut chart data
+  const chartData = macros
+    ? [
+        { name: "Protein", value: macros.proteinGrams },
+        { name: "Carbs", value: macros.carbsGrams },
+        { name: "Fat", value: macros.fatGrams },
+      ]
+    : [];
 
   async function createFood(event) {
     event.preventDefault();
@@ -120,7 +190,10 @@ export default function Home() {
             </a>
             <div style={{ flexGrow: 1 }}></div>
             <Button
-              onClick={signOut}
+              onClick={() => {
+                signOut();
+                localStorage.removeItem("profileCompleted");
+              }}
               style={{
                 backgroundColor: "#BF3131",
                 color: "white",
@@ -144,9 +217,9 @@ export default function Home() {
             alignItems="center"
             direction="column"
             style={{
-                marginLeft: "270px",
-                padding: "1rem",
-                width: "100%",
+              marginLeft: "270px",
+              padding: "1rem",
+              width: "100%",
             }}
           >
             {/* FitForge fejléc */}
@@ -171,6 +244,53 @@ export default function Home() {
                 <FaDumbbell style={{ marginRight: "15px", color: "#EAD196" }} />
               </Heading>
             </div>
+
+            {/* Napi kalóriaszükséglet + donut chart */}
+            {macros && (
+              <div style={{ marginTop: "2rem", textAlign: "center" }}>
+                <Heading level={3} style={{ marginBottom: "1rem" }}>
+                  Napi kalóriaszükséglet: <span style={{ color: "#7D0A0A" }}>{macros.tdee} kcal</span>
+                </Heading>
+                <Flex direction="column" alignItems="center" justifyContent="center">
+                  <PieChart width={350} height={350}>
+                    <Pie
+                      data={chartData}
+                      cx="50%"
+                      cy="50%"
+                      innerRadius={70}
+                      outerRadius={110}
+                      fill="#8884d8"
+                      paddingAngle={3}
+                      dataKey="value"
+                      labelLine={false}
+                      label={({ name }) => name} // Egyszerű címke, csak a makró nevét írja
+                      isAnimationActive={true}
+                    >
+                      {chartData.map((entry, index) => (
+                        <Cell
+                          key={`cell-${index}`}
+                          fill={CHART_COLORS[index % CHART_COLORS.length]}
+                          stroke="#fff" // Fehér körvonal
+                          strokeWidth={2}
+                        />
+                      ))}
+                    </Pie>
+                    <Tooltip
+                      wrapperStyle={{ fontFamily: "sans-serif", backgroundColor: "#f5f5f5", border: "1px solid #ccc" }}
+                      formatter={(value, name) => [`${value} g`, name]}
+                    />
+                    <Legend
+                      verticalAlign="bottom"
+                      iconType="circle"
+                      wrapperStyle={{ fontFamily: "sans-serif", marginTop: "1rem" }}
+                    />
+                  </PieChart>
+                  <p style={{ marginTop: "0.5rem", fontSize: "1rem" }}>
+                    <strong>Makrók:</strong> Fehérje {macros.proteinGrams} g, Szénhidrát {macros.carbsGrams} g, Zsír {macros.fatGrams} g
+                  </p>
+                </Flex>
+              </div>
+            )}
 
             {/* Étel hozzáadás űrlap */}
             <View as="form" margin="3rem 0" onSubmit={createFood}>

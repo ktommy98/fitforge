@@ -6,7 +6,7 @@ import WorkoutPlan from "./pages/Workoutplan";
 import Ebook1 from "./pages/Ebook1";
 import Ebook2 from "./pages/Ebook2";
 import ProfileSetup from "./pages/ProfileSetup";
-import Recipes from "./Recipes";
+import Recipes from "./pages/Recipes";
 
 function AppRoutes() {
   const { authStatus } = useAuthenticator((context) => [context.authStatus]);
