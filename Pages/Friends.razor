@@ -1,18 +1,7 @@
 ﻿@page "/friends"
 
-<PageTitle>Friends</PageTitle>
-
-<h1>Counter</h1>
-
-<p role="status">Current count: @currentCount</p>
-
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
-
-@code {
-    private int currentCount = 0;
-
-    private void IncrementCount()
-    {
-        currentCount++;
-    }
-}
+<div class="friends-container">
+    <img src="images/friends.png" alt="Friends" class="friends-image" />
+    <h2>Connect with your friends and share your nutritional summaries, your favorite recipes, and more!</h2>
+    <button class="add-friends-button">Add your friends +</button>
+</div>

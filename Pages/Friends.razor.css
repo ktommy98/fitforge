@@ -1,0 +1,38 @@
+.friends-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.friends-image {
+    max-width: 150%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    margin-bottom: 1.5rem;
+}
+
+.friends-container h2 {
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    color: #BF3131;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+}
+
+.add-friends-button {
+    background-color: #7D0A0A;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-friends-button:hover {
+    background-color: #BF3131;
+}

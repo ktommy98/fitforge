@@ -1,25 +1,25 @@
-// recipes.jsx
+// Recipes.jsx
 import React, { useState } from "react";
 import { Flex, Heading, Text, Button, Image } from "@aws-amplify/ui-react";
 import { useNavigate } from "react-router-dom";
 
-// Recept-objektumok
+// Recipe objects in English
 const recipes = [
   {
     title: "French Toast",
     image: "/src/images/french_toast.jpg",
     serving: "1",
     ingredients: [
-      "250g tojásfehérje (kb. 7-8 M-es tojásból)",
-      "50 ml cukormentes mandulatej",
-      "2 pipetta vaníliás FlavDrops / Vanília aroma",
-      "2 teáskanál őrölt fahéj",
-      "4 szelet kenyér (kb. 150g - max 250 kcal/100g)",
-      "Sütőspray",
-      "Toppingok: kalóriamentes szirup / mogyoróvaj por / light joghurt / gyümölcsök",
+      "250g egg whites (about 7-8 medium eggs)",
+      "50 ml sugar-free almond milk",
+      "2 pipettes vanilla FlavDrops / vanilla flavor",
+      "2 tsp ground cinnamon",
+      "4 slices of bread (about 150g - max 250 kcal/100g)",
+      "Cooking spray",
+      "Toppings: zero-calorie syrup / powdered peanut butter / light yogurt / fruits",
     ],
     preparation:
-      "Tedd egy tálba a tojásfehérjét, mandulatejet, aromát, édesítőt és jól keverd össze. Süsd meg a kenyereket serpenyőben, majd ízlés szerint tálald.",
+      "Put the egg whites, almond milk, flavoring, and sweetener into a bowl and mix well. Cook the bread slices in a pan, then serve with toppings to taste.",
     nutrition: {
       calories: "500 Kcal",
       protein: "37.5g",
@@ -28,37 +28,37 @@ const recipes = [
     },
   },
   {
-    title: "Eper Ízű Zabsüti",
+    title: "Strawberry-Flavored Oat Cookie",
     image: "/src/images/strawberry_cookie.jpg",
-    serving: "8 darab",
+    serving: "8 pieces",
     ingredients: [
-      "75g zab",
-      "20g fehérjepor - Natural strawberry myprotein soy protein isolate",
-      "120g banán",
-      "20g cukrozatlan mandula tej",
-      "10g málna ízű étcsoki",
+      "75g oats",
+      "20g strawberry-flavored soy protein isolate (Myprotein)",
+      "120g banana",
+      "20g unsweetened almond milk",
+      "10g raspberry-flavored dark chocolate",
     ],
     preparation:
-      "A zabot, fehérjeport, banán pépet és mandulatejet keverd össze, majd formázz belőlük 8 darab golyót. Egy sütőpapírral bélelt tepsibe helyezd a golyókat, nyomd le a tetejüket, és szórd rá a csoki darabokat. 180 fokon süsd kb. 25-30 percig.",
+      "Mix the oats, protein powder, mashed banana, and almond milk. Shape the mixture into 8 balls. Place them on a baking sheet lined with parchment paper, press them down, and sprinkle chocolate pieces on top. Bake at 180°C (356°F) for about 25-30 minutes.",
     nutrition: {
-      calories: "63 Kcal / darab",
+      calories: "63 Kcal / piece",
       protein: "3.6g",
       carbs: "9.1g",
       fat: "1.3g",
     },
   },
   {
-    title: "Sajtos Omlett Édesburgonyával",
+    title: "Cheese Omelet with Sweet Potato",
     image: "/src/images/sweet_potato_omlette.jpg",
     serving: "1",
     ingredients: [
-      "300g édesburgonya",
-      "200g tojásfehérje",
-      "1 egész tojás",
-      "25g light trappista sajt",
+      "300g sweet potato",
+      "200g egg whites",
+      "1 whole egg",
+      "25g light cheese",
     ],
     preparation:
-      "Keverd össze a tojásfehérjét és a tojást, fűszerezd. Süsd serpenyőben. Az édesburgonyát süsd mikróban 7 percig vagy sütőben.",
+      "Mix the egg whites and whole egg, season to taste. Cook in a pan. Cook the sweet potato in the microwave for 7 minutes or bake in the oven.",
     nutrition: {
       calories: "490 Kcal",
       protein: "40g",
@@ -67,19 +67,19 @@ const recipes = [
     },
   },
   {
-    title: "Almás Protein Palacsinta",
+    title: "Apple Protein Pancake",
     image: "/src/images/apple_protein_pancake.jpg",
     serving: "1",
     ingredients: [
-      "200g tojásfehérje",
-      "30g zab",
-      "200g alma",
-      "60g sovány krémtúró",
-      "20g myprotein vitafiber",
-      "5g sütőpor",
+      "200g egg whites",
+      "30g oats",
+      "200g apple",
+      "60g low-fat quark cheese",
+      "20g Myprotein VitaFiber",
+      "5g baking powder",
     ],
     preparation:
-      "Turmixold össze az alapanyagokat. Hűtsd 3-4 órát vagy süsd azonnal. Serpenyőben süsd kb. 1-2 percig oldalanként.",
+      "Blend all ingredients. Optionally chill the batter for 3-4 hours or cook immediately. Cook in a pan for about 1-2 minutes on each side.",
     nutrition: {
       calories: "400 Kcal",
       protein: "32.5g",
@@ -92,14 +92,14 @@ const recipes = [
     image: "/src/images/high-protein-jello-mousse.jpg",
     serving: "1",
     ingredients: [
-      "250g sovány krémtúró (Aldi - New Lifestyle 66 kcal/100g)",
-      "10g fehérjepor (vaníliás Myprotein Impact Whey vagy vegán fehérjepor)",
-      "10g zselatin",
-      "100g áfonya/eper/málna",
-      "Édesítőszer, FlavDrops",
+      "250g low-fat quark cheese (Aldi - New Lifestyle 66 kcal/100g)",
+      "10g protein powder (vanilla Myprotein Impact Whey or vegan protein powder)",
+      "10g gelatin",
+      "100g blueberries/strawberries/raspberries",
+      "Sweetener, FlavDrops",
     ],
     preparation:
-      "Tedd a krémtúrót egy tálba és adj hozzá annyi vizet, hogy összekeverve krémes állaga legyen, majd add hozzá a fehérjeport és édesítsd ízlés szerint. Ha szeretnéd, bele turmixolhatsz a krémbe egy kicsit a gyümölcsből, hogy egy jó színt adjon neki. Keverd össze a zselatint egy kis forró vízzel és amikor teljesen feloldódott, fokozatosan kevergetve add hozzá a túrókrémet, majd szórd bele a gyümölcsöt és alaposan keverd össze. Helyezd a hűtőbe 3-4 órára, amíg megszilárdul.",
+      "Put the quark cheese in a bowl and add just enough water to achieve a creamy texture, then add the protein powder and sweeten to taste. If desired, blend some of the fruit into the cream for color. Dissolve the gelatin in a little hot water; once fully dissolved, gradually stir it into the cheese mixture and then fold in the fruit. Chill in the fridge for 3-4 hours until set.",
     nutrition: {
       calories: "315 Kcal",
       protein: "48g",
@@ -108,26 +108,26 @@ const recipes = [
     },
   },
   {
-    title: "Thai Csirkés Rizstészta",
+    title: "Thai Chicken Rice Noodles",
     image: "/src/images/thai_noodles.jpg",
     serving: "2",
     ingredients: [
-      "120g rizstészta",
-      "200g csirkemell",
-      "300g csiperkegomba",
-      "100g vöröshagyma",
-      "100g bébirépa",
-      "100g zöldbab",
-      "100g wok mix zöldség",
-      "50ml szójaszósz - Chin-Su márka",
-      "3ml olívaolaj",
-      "2g szezámmag",
-      "Fűszerek: só, bors, fokhagymapor, thai fűszerek, Sriracha/chili szósz",
+      "120g rice noodles",
+      "200g chicken breast",
+      "300g button mushrooms",
+      "100g onion",
+      "100g baby carrots",
+      "100g green beans",
+      "100g wok mix vegetables",
+      "50ml soy sauce (Chin-Su brand)",
+      "3ml olive oil",
+      "2g sesame seeds",
+      "Seasonings: salt, pepper, garlic powder, Thai spices, Sriracha/chili sauce",
     ],
     preparation:
-      "Főzd meg a rizstésztát a csomagolás szerint. Egy serpenyőben olívaolajon párold a hagymát, majd add hozzá a csirkét apró kockára vágva. Ezután add hozzá a gombát és a zöldségeket, és főzd, amíg a csirke és gomba kiengedett leve elfő. Fűszerezd ízlés szerint, majd keverd hozzá a rizstésztát és a szójaszószt, és pirítsd 1 percig. Ha szeretnéd, adj hozzá egy kevés Sriracha szószt. A végén szórd meg szezámmaggal.",
+      "Cook the rice noodles according to the package instructions. In a pan with olive oil, sauté the onion, then add the chicken cut into small cubes. Next, add the mushrooms and vegetables, and cook until the chicken and mushrooms release their liquid. Season to taste, then stir in the rice noodles and soy sauce, and fry for 1 minute. Optionally, add some Sriracha sauce. Finally, sprinkle with sesame seeds.",
     nutrition: {
-      calories: "483 Kcal (1 adag)",
+      calories: "483 Kcal (1 serving)",
       protein: "44.4g",
       carbs: "68.2g",
       fat: "4g",
@@ -138,11 +138,11 @@ const recipes = [
 export default function Recipes() {
   const navigate = useNavigate();
 
-  // Lapozáshoz szükséges állapotok
+  // State for pagination
   const [currentPage, setCurrentPage] = useState(0);
-  const recipesPerPage = 2; // Egy oldalon hány recept jelenjen meg
+  const recipesPerPage = 2;
 
-  // Lapozás logika
+  // Pagination logic
   const nextPage = () => {
     setCurrentPage((prev) => (prev + 1) % Math.ceil(recipes.length / recipesPerPage));
   };
@@ -153,7 +153,6 @@ export default function Recipes() {
     );
   };
 
-  // Gombok stílusa
   const buttonStyle = {
     backgroundColor: "#7D0A0A",
     color: "white",
@@ -168,7 +167,7 @@ export default function Recipes() {
 
   return (
     <Flex direction="column" alignItems="center" style={{ padding: "2rem" }}>
-      {/* Fejléc */}
+      {/* Header */}
       <div
         style={{
           backgroundColor: "#BF3131",
@@ -190,7 +189,7 @@ export default function Recipes() {
         </Heading>
       </div>
 
-      {/* Recept kártyák, grid-szerű elrendezéssel */}
+      {/* Recipe cards in a grid-like layout */}
       <Flex
         direction="row"
         wrap="wrap"
@@ -211,7 +210,7 @@ export default function Recipes() {
                 boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
                 borderRadius: "10px",
                 padding: "1.5rem",
-                flexBasis: "calc(50% - 2rem)", // Két oszlopban jelenik meg
+                flexBasis: "calc(50% - 2rem)",
                 maxWidth: "600px",
                 transition: "transform 0.3s",
               }}
@@ -232,33 +231,33 @@ export default function Recipes() {
                 }}
               />
               <Text style={{ marginBottom: "1rem" }}>
-                <strong>Adag:</strong> {recipe.serving}
+                <strong>Servings:</strong> {recipe.serving}
               </Text>
               <Text>
-                <strong>Hozzávalók:</strong>
+                <strong>Ingredients:</strong>
               </Text>
               <ul style={{ marginLeft: "1.5rem", marginTop: "0.5rem" }}>
                 {recipe.ingredients.map((ingredient, idx) => (
                   <li key={idx}>{ingredient}</li>
                 ))}
               </ul>
-              <Text style={{ marginBottom: "1rem" }}>
-                <strong>Elkészítés:</strong> {recipe.preparation}
+              <Text style={{ marginBottom: "1rem", marginTop: "1rem" }}>
+                <strong>Preparation:</strong> {recipe.preparation}
               </Text>
               <Text>
-                <strong>Tápértékek:</strong>
+                <strong>Nutrition:</strong>
                 <ul style={{ marginLeft: "1.5rem", marginTop: "0.5rem" }}>
-                  <li>Kalória: {recipe.nutrition.calories}</li>
-                  <li>Fehérje: {recipe.nutrition.protein}</li>
-                  <li>Szénhidrát: {recipe.nutrition.carbs}</li>
-                  <li>Zsír: {recipe.nutrition.fat}</li>
+                  <li>Calories: {recipe.nutrition.calories}</li>
+                  <li>Protein: {recipe.nutrition.protein}</li>
+                  <li>Carbs: {recipe.nutrition.carbs}</li>
+                  <li>Fat: {recipe.nutrition.fat}</li>
                 </ul>
               </Text>
             </Flex>
           ))}
       </Flex>
 
-      {/* Lapozó gombok */}
+      {/* Pagination buttons */}
       <Flex direction="row" gap="1rem" marginTop="2rem">
         <Button
           style={buttonStyle}
@@ -278,6 +277,7 @@ export default function Recipes() {
         </Button>
       </Flex>
 
+      {/* Back to main page */}
       <Button
         style={{
           ...buttonStyle,

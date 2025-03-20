@@ -21,7 +21,6 @@
 </div>
 
 @code {
-    // Statikus dictionary, hogy a timer állapota megmaradjon oldalak között
     private static Dictionary<string, DateTime> GlobalStartTimes = new Dictionary<string, DateTime>();
 
     private List<Challenge> ChallengeList = new List<Challenge>
@@ -40,7 +39,6 @@
 
     private void OnCardClicked(Challenge challenge)
     {
-        // Ha még nincs timer a kártyához, akkor beállítjuk
         if (!GlobalStartTimes.ContainsKey(challenge.Label))
         {
             GlobalStartTimes[challenge.Label] = DateTime.Now;
@@ -73,7 +71,6 @@
         public string Icon { get; set; }
     }
 
-    // Egy végtelen ciklus, ami másodpercenként frissíti az UI-t, hogy a timer folyamatosan számoljon.
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
