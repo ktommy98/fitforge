@@ -16,52 +16,33 @@ import "@aws-amplify/ui-react/styles.css";
 import { generateClient } from "aws-amplify/data";
 import outputs from "../amplify_outputs.json";
 import { FaDumbbell, FaAppleAlt, FaUtensils, FaRunning } from "react-icons/fa";
-
-// ---- RECHARTS IMPORTOK ----
 import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
 
 Amplify.configure(outputs);
 const client = generateClient({ authMode: "userPool" });
 
-// Alapszínek a chart-hoz, illeszkedve a pirosas, bordós designhoz
 const CHART_COLORS = ["#BF3131", "#EAD196", "#7D0A0A"];
 
-// Számítás segédfüggvény (Mifflin-St Jeor)
 function calculateTDEE({ gender, age, height, weight, exerciseLevel }) {
   const w = parseFloat(weight);
   const h = parseFloat(height);
   const a = parseFloat(age);
-
-  let BMR = 0;
-  if (gender === "male") {
-    BMR = 10 * w + 6.25 * h - 5 * a + 5;
-  } else {
-    // female
-    BMR = 10 * w + 6.25 * h - 5 * a - 161;
-  }
-
-  let activityFactor = 1.2; // beginner
+  let BMR = gender === "male" ? 10 * w + 6.25 * h - 5 * a + 5 : 10 * w + 6.25 * h - 5 * a - 161;
+  let activityFactor = 1.2;
   if (exerciseLevel === "intermediate") activityFactor = 1.375;
   if (exerciseLevel === "advanced") activityFactor = 1.55;
-
   return BMR * activityFactor;
 }
 
-// Makrók kiszámítása (30% fehérje, 45% szénhidrát, 25% zsír)
 function calculateMacros(tdee) {
   const proteinKcal = tdee * 0.3;
   const carbsKcal = tdee * 0.45;
   const fatKcal = tdee * 0.25;
-
-  const proteinGrams = proteinKcal / 4;
-  const carbsGrams = carbsKcal / 4;
-  const fatGrams = fatKcal / 9;
-
   return {
     tdee: Math.round(tdee),
-    proteinGrams: Math.round(proteinGrams),
-    carbsGrams: Math.round(carbsGrams),
-    fatGrams: Math.round(fatGrams),
+    proteinGrams: Math.round(proteinKcal / 4),
+    carbsGrams: Math.round(carbsKcal / 4),
+    fatGrams: Math.round(fatKcal / 9),
   };
 }
 
@@ -76,20 +57,14 @@ export default function Home() {
     if (stored) {
       const parsed = JSON.parse(stored);
       setProfileData(parsed);
-
-      // Kiszámítjuk a TDEE-t és a makrókat
       const tdee = calculateTDEE(parsed);
-      const macroRes = calculateMacros(tdee);
-      setMacros(macroRes);
+      setMacros(calculateMacros(tdee));
     }
-
-    // Food adatok betöltése
     client.models.Food.observeQuery().subscribe({
       next: (data) => setFoods([...data.items]),
     });
   }, []);
 
-  // Recharts donut chart data
   const chartData = macros
     ? [
         { name: "Protein", value: macros.proteinGrams },
@@ -231,25 +206,24 @@ export default function Home() {
                 borderRadius: "20px",
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "center",
-                gap: "10px",
+                justifyContent: "space-between",
                 fontFamily: "'Anton', sans-serif",
                 letterSpacing: "2px",
                 textTransform: "uppercase",
               }}
             >
+              <FaDumbbell style={{ color: "#EAD196", fontSize: "2rem" }} />
               <Heading level={1} style={{ margin: 1, color: "#EEEEEE" }}>
-                <FaDumbbell style={{ marginLeft: "15px", color: "#EAD196" }} />
                 FitForge
-                <FaDumbbell style={{ marginRight: "15px", color: "#EAD196" }} />
               </Heading>
+              <FaDumbbell style={{ color: "#EAD196", fontSize: "2rem" }} />
             </div>
 
             {/* Napi kalóriaszükséglet + donut chart */}
             {macros && (
               <div style={{ marginTop: "2rem", textAlign: "center" }}>
                 <Heading level={3} style={{ marginBottom: "1rem" }}>
-                  Napi kalóriaszükséglet: <span style={{ color: "#7D0A0A" }}>{macros.tdee} kcal</span>
+                  Daily Calorie Intake: <span style={{ color: "#7D0A0A" }}>{macros.tdee} kcal</span>
                 </Heading>
                 <Flex direction="column" alignItems="center" justifyContent="center">
                   <PieChart width={350} height={350}>
@@ -263,20 +237,24 @@ export default function Home() {
                       paddingAngle={3}
                       dataKey="value"
                       labelLine={false}
-                      label={({ name }) => name} // Egyszerű címke, csak a makró nevét írja
+                      label={({ name }) => name}
                       isAnimationActive={true}
                     >
                       {chartData.map((entry, index) => (
                         <Cell
                           key={`cell-${index}`}
                           fill={CHART_COLORS[index % CHART_COLORS.length]}
-                          stroke="#fff" // Fehér körvonal
+                          stroke="#fff"
                           strokeWidth={2}
                         />
                       ))}
                     </Pie>
                     <Tooltip
-                      wrapperStyle={{ fontFamily: "sans-serif", backgroundColor: "#f5f5f5", border: "1px solid #ccc" }}
+                      wrapperStyle={{
+                        fontFamily: "sans-serif",
+                        backgroundColor: "#f5f5f5",
+                        border: "1px solid #ccc",
+                      }}
                       formatter={(value, name) => [`${value} g`, name]}
                     />
                     <Legend
@@ -286,47 +264,22 @@ export default function Home() {
                     />
                   </PieChart>
                   <p style={{ marginTop: "0.5rem", fontSize: "1rem" }}>
-                    <strong>Makrók:</strong> Fehérje {macros.proteinGrams} g, Szénhidrát {macros.carbsGrams} g, Zsír {macros.fatGrams} g
+                    <strong>Macros:</strong> Protein {macros.proteinGrams} g, Carb {macros.carbsGrams} g, Fat {macros.fatGrams} g
                   </p>
                 </Flex>
               </div>
             )}
 
-            {/* Étel hozzáadás űrlap */}
-            <View as="form" margin="3rem 0" onSubmit={createFood}>
-              <Flex direction="column" justifyContent="center" gap="2rem" padding="2rem">
-                <TextField name="name" placeholder="Food Name" labelHidden variation="quiet" required />
-                <Flex gap="1rem">
-                  <TextField name="amount" placeholder="Food Amount" type="number" labelHidden variation="quiet" required />
-                  <SelectField name="unit" labelHidden required>
-                    <option value="g">Gramm (g)</option>
-                    <option value="kg">Kilogramm (kg)</option>
-                    <option value="ml">Milliliter (ml)</option>
-                    <option value="l">Liter (l)</option>
-                    <option value="db">Darab (db)</option>
-                  </SelectField>
-                </Flex>
-                <Button
-                  type="submit"
-                  style={{
-                    backgroundColor: "#7D0A0A",
-                    color: "white",
-                    border: "none",
-                    padding: "0.5rem 1rem",
-                    borderRadius: "5px",
-                    fontWeight: "bold",
-                    cursor: "pointer",
-                    transition: "background 0.3s ease-in-out",
-                  }}
-                >
-                  Add
-                </Button>
-              </Flex>
-            </View>
+            <hr
+              style={{
+                width: "80%",
+                border: "none",
+                borderTop: "2px solid #ccc",
+                margin: "2rem auto",
+              }}
+            />
 
-            <Divider />
-
-            {/* Food Tracking */}
+            {/* Food Tracking szekció */}
             <div
               style={{
                 backgroundColor: "#BF3131",
@@ -351,21 +304,53 @@ export default function Home() {
               <FaAppleAlt style={{ color: "#7D0A0A", fontSize: "1.5rem" }} />
             </div>
 
-            {/* Ételek listázása */}
-            <Grid margin="3rem 0" autoFlow="column" justifyContent="center" gap="2rem" alignContent="center">
+            {/* Ide kerül a Food Tracking form, ami a felhasználó ételadatainak bevitelét szolgálja */}
+            <View as="form" margin="1rem 0" onSubmit={createFood}>
+              <Flex direction="column" justifyContent="center" gap="1rem" padding="1rem">
+                <TextField name="name" placeholder="Food Name" labelHidden variation="quiet" required />
+                <Flex gap="1rem">
+                  <TextField name="amount" placeholder="Food Amount" type="number" labelHidden variation="quiet" required />
+                  <SelectField name="unit" labelHidden required>
+                    <option value="g">Gramm (g)</option>
+                    <option value="kg">Kilogramm (kg)</option>
+                    <option value="ml">Milliliter (ml)</option>
+                    <option value="l">Liter (l)</option>
+                    <option value="db">Darab (db)</option>
+                  </SelectField>
+                </Flex>
+                <Button
+                  type="submit"
+                  style={{
+                    backgroundColor: "#7D0A0A",
+                    color: "white",
+                    border: "none",
+                    padding: "0.5rem 1rem",
+                    borderRadius: "5px",
+                    fontWeight: "bold",
+                    cursor: "pointer",
+                    transition: "background 0.3s ease-in-out",
+                  }}
+                >
+                  Add Food
+                </Button>
+              </Flex>
+            </View>
+
+            {/* Listázza az ételeket */}
+            <Grid margin="2rem 0" autoFlow="column" justifyContent="center" gap="2rem" alignContent="center">
               {foods.map((food) => (
                 <Flex
                   key={food.id || food.name}
                   direction="column"
                   justifyContent="center"
                   alignItems="center"
-                  gap="2rem"
+                  gap="1rem"
                   border="1px solid #ccc"
-                  padding="2rem"
+                  padding="1.5rem"
                   borderRadius="5%"
                   style={{ color: "#333" }}
                 >
-                  <Heading level="3" style={{ margin: 0 }}>
+                  <Heading level={3} style={{ margin: 0 }}>
                     {food.name}
                   </Heading>
                   <p style={{ fontStyle: "italic", margin: 0 }}>

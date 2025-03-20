@@ -186,7 +186,7 @@ export default function Recipes() {
         }}
       >
         <Heading level={1} style={{ margin: 0, color: "#EEEEEE" }}>
-          Receptek
+          Recipes
         </Heading>
       </div>
 
@@ -266,7 +266,7 @@ export default function Recipes() {
           onMouseOut={(e) => (e.target.style.backgroundColor = "#7D0A0A")}
           onClick={prevPage}
         >
-          Előző
+          Last
         </Button>
         <Button
           style={buttonStyle}
@@ -274,7 +274,7 @@ export default function Recipes() {
           onMouseOut={(e) => (e.target.style.backgroundColor = "#7D0A0A")}
           onClick={nextPage}
         >
-          Következő
+          Next
         </Button>
       </Flex>
 
@@ -288,7 +288,7 @@ export default function Recipes() {
         onMouseOut={(e) => (e.target.style.backgroundColor = "#7D0A0A")}
         onClick={() => navigate("/")}
       >
-        Vissza a főoldalra
+        Back to Main Page
       </Button>
     </Flex>
   );
