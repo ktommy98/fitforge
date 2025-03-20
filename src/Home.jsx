@@ -15,7 +15,7 @@ import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
 import { generateClient } from "aws-amplify/data";
 import outputs from "../amplify_outputs.json";
-import { FaDumbbell, FaAppleAlt, FaUtensils, FaRunning } from "react-icons/fa";
+import { FaDumbbell, FaAppleAlt, FaUtensils, FaRunning, FaUser } from "react-icons/fa";
 import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
 
 Amplify.configure(outputs);
@@ -199,6 +199,33 @@ export default function Home() {
               <FaRunning style={{ marginRight: "0.5rem" }} />
               Workout Plan
             </a>
+            <a
+              href="http://localhost:5237"
+              target="_blank"  // Ha új ablakban szeretnéd megnyitni, vagy eltávolíthatod, ha ugyanabban az ablakban akarod
+              rel="noopener noreferrer"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                color: "white",
+                textDecoration: "none",
+                marginTop: "1rem",
+                cursor: "pointer",
+                fontSize: "1rem",
+                transition: "all 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.1)";
+                e.currentTarget.style.color = "#EAD196";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+                e.currentTarget.style.color = "white";
+              }}
+            >
+              <FaUser style={{ marginRight: "0.5rem" }} />
+              Profile
+            </a>
+
             <div style={{ flexGrow: 1 }}></div>
             <Button
               onClick={() => {

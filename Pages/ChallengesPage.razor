@@ -1,0 +1,34 @@
+﻿@page "/challengespage"
+
+<div class="card-container">
+    @foreach (var challenge in ChallengeList)
+    {
+        <div class="challenge-card" style="background-color:@challenge.Color">
+            <i class="@challenge.Icon" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+            <h3>@challenge.Label</h3>
+        </div>
+    }
+</div>
+
+@code {
+    private List<Challenge> ChallengeList = new List<Challenge>
+    {
+        new Challenge { Label = "no chocolate", Color = "#3E2723", Icon = "fas fa-cookie-bite" },
+        new Challenge { Label = "no sugar", Color = "#BF360C", Icon = "fas fa-lemon" },
+        new Challenge { Label = "no candy", Color = "#4E342E", Icon = "fas fa-cookie" },
+        new Challenge { Label = "no fastfood", Color = "#311B92", Icon = "fas fa-hamburger" },
+        new Challenge { Label = "no coffee", Color = "#1B5E20", Icon = "fas fa-coffee" },
+        new Challenge { Label = "no alcohol", Color = "#263238", Icon = "fas fa-beer" },
+        new Challenge { Label = "no pizza", Color = "#0D47A1", Icon = "fas fa-pizza-slice" },
+        new Challenge { Label = "no meat", Color = "#BF360C", Icon = "fas fa-drumstick-bite" },
+        new Challenge { Label = "no chips", Color = "#37474F", Icon = "fas fa-ban" },
+        new Challenge { Label = "no cigarettes", Color = "#212121", Icon = "fas fa-smoking-ban" },
+    };
+
+    public class Challenge
+    {
+        public string Label { get; set; }
+        public string Color { get; set; }
+        public string Icon { get; set; }
+    }
+}
