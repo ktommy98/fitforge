@@ -6,6 +6,7 @@ const schema = a.schema({
       name:a.string(),
       amount: a.float(),
       unit: a.string(),
+      meal: a.string(),
     })
     .authorization((allow) => [allow.owner()]),
 });
