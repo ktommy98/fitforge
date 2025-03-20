@@ -28,6 +28,22 @@
     filter: brightness(0.9);
 }
 
+.stop-button {
+    background-color: #7D0A0A;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.stop-button:hover {
+    background-color: #BF3131;
+}
+
+
 @media (max-width: 768px) {
     .challenge-card {
         flex: 0 1 calc(50% - 1rem);

@@ -1,34 +1,91 @@
 ﻿@page "/challengespage"
+@inject IJSRuntime JS
 
 <div class="card-container">
     @foreach (var challenge in ChallengeList)
     {
-        <div class="challenge-card" style="background-color:@challenge.Color">
-            <i class="@challenge.Icon" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+        <div class="challenge-card" style="background-color:@challenge.Color" @onclick="@(() => OnCardClicked(challenge))">
+            <i class="@challenge.Icon" style="font-size: 2.5rem; margin-bottom: 0.5rem;"></i>
             <h3>@challenge.Label</h3>
+            @if (GlobalStartTimes.ContainsKey(challenge.Label))
+            {
+                <div style="margin-top: 1rem;">
+                    <p style="font-size:1.1rem; font-weight:bold;">@DisplayTimer(challenge.Label)</p>
+                    <button class="stop-button" @onclick="@(e => StopTimerForChallenge(challenge))" @onclick:stopPropagation="true">
+                        I give up
+                    </button>
+                </div>
+            }
         </div>
     }
 </div>
 
 @code {
+    // Statikus dictionary, hogy a timer állapota megmaradjon oldalak között
+    private static Dictionary<string, DateTime> GlobalStartTimes = new Dictionary<string, DateTime>();
+
     private List<Challenge> ChallengeList = new List<Challenge>
     {
-        new Challenge { Label = "no chocolate", Color = "#3E2723", Icon = "fas fa-cookie-bite" },
-        new Challenge { Label = "no sugar", Color = "#BF360C", Icon = "fas fa-lemon" },
-        new Challenge { Label = "no candy", Color = "#4E342E", Icon = "fas fa-cookie" },
-        new Challenge { Label = "no fastfood", Color = "#311B92", Icon = "fas fa-hamburger" },
-        new Challenge { Label = "no coffee", Color = "#1B5E20", Icon = "fas fa-coffee" },
-        new Challenge { Label = "no alcohol", Color = "#263238", Icon = "fas fa-beer" },
-        new Challenge { Label = "no pizza", Color = "#0D47A1", Icon = "fas fa-pizza-slice" },
-        new Challenge { Label = "no meat", Color = "#BF360C", Icon = "fas fa-drumstick-bite" },
-        new Challenge { Label = "no chips", Color = "#37474F", Icon = "fas fa-ban" },
-        new Challenge { Label = "no cigarettes", Color = "#212121", Icon = "fas fa-smoking-ban" },
+        new Challenge { Label = "no chocolate", Color = "#B17F59", Icon = "fas fa-cookie-bite" },
+        new Challenge { Label = "no sugar", Color = "#5F99AE", Icon = "fas fa-lemon" },
+        new Challenge { Label = "no candy", Color = "#A5158C", Icon = "fas fa-cookie" },
+        new Challenge { Label = "no fastfood", Color = "#3F7D58", Icon = "fas fa-hamburger" },
+        new Challenge { Label = "no coffee", Color = "#EFEFEF", Icon = "fas fa-coffee" },
+        new Challenge { Label = "no alcohol", Color = "#EC5228", Icon = "fas fa-beer" },
+        new Challenge { Label = "no pizza", Color = "#FFA725", Icon = "fas fa-pizza-slice" },
+        new Challenge { Label = "no meat", Color = "#A31D1D", Icon = "fas fa-drumstick-bite" },
+        new Challenge { Label = "no chips", Color = "#EB5B00", Icon = "fas fa-ban" },
+        new Challenge { Label = "no cigarettes", Color = "#5C7285", Icon = "fas fa-smoking-ban" },
     };
+
+    private void OnCardClicked(Challenge challenge)
+    {
+        // Ha még nincs timer a kártyához, akkor beállítjuk
+        if (!GlobalStartTimes.ContainsKey(challenge.Label))
+        {
+            GlobalStartTimes[challenge.Label] = DateTime.Now;
+        }
+    }
+
+    private void StopTimerForChallenge(Challenge challenge)
+    {
+        if (GlobalStartTimes.ContainsKey(challenge.Label))
+        {
+            GlobalStartTimes.Remove(challenge.Label);
+            StateHasChanged();
+        }
+    }
+
+    private string DisplayTimer(string challengeLabel)
+    {
+        if (GlobalStartTimes.TryGetValue(challengeLabel, out DateTime startTime))
+        {
+            var elapsed = DateTime.Now - startTime;
+            return $"{elapsed.Days}d {elapsed.Hours:D2}h {elapsed.Minutes:D2}m {elapsed.Seconds:D2}s";
+        }
+        return "";
+    }
 
     public class Challenge
     {
         public string Label { get; set; }
         public string Color { get; set; }
         public string Icon { get; set; }
+    }
+
+    // Egy végtelen ciklus, ami másodpercenként frissíti az UI-t, hogy a timer folyamatosan számoljon.
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _ = Task.Run(async () =>
+            {
+                while (true)
+                {
+                    await Task.Delay(1000);
+                    InvokeAsync(StateHasChanged);
+                }
+            });
+        }
     }
 }
