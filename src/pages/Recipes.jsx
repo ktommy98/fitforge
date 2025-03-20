@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const recipes = [
   {
     title: "French Toast",
-    image: "/src/images/french_toast.jpg",
+    image: "/images/french_toast.jpg",
     serving: "1",
     ingredients: [
       "250g egg whites (about 7-8 medium eggs)",
@@ -29,7 +29,7 @@ const recipes = [
   },
   {
     title: "Strawberry-Flavored Oat Cookie",
-    image: "/src/images/strawberry_cookie.jpg",
+    image: "/images/strawberry_cookie.jpg",
     serving: "8 pieces",
     ingredients: [
       "75g oats",
@@ -49,7 +49,7 @@ const recipes = [
   },
   {
     title: "Cheese Omelet with Sweet Potato",
-    image: "/src/images/sweet_potato_omlette.jpg",
+    image: "/images/sweet_potato_omlette.jpg",
     serving: "1",
     ingredients: [
       "300g sweet potato",
@@ -68,7 +68,7 @@ const recipes = [
   },
   {
     title: "Apple Protein Pancake",
-    image: "/src/images/apple_protein_pancake.jpg",
+    image: "/images/apple_protein_pancake.jpg",
     serving: "1",
     ingredients: [
       "200g egg whites",
@@ -89,7 +89,7 @@ const recipes = [
   },
   {
     title: "Jelly Mousse",
-    image: "/src/images/high-protein-jello-mousse.jpg",
+    image: "/images/high-protein-jello-mousse.jpg",
     serving: "1",
     ingredients: [
       "250g low-fat quark cheese (Aldi - New Lifestyle 66 kcal/100g)",
@@ -109,7 +109,7 @@ const recipes = [
   },
   {
     title: "Thai Chicken Rice Noodles",
-    image: "/src/images/thai_noodles.jpg",
+    image: "/images/thai_noodles.jpg",
     serving: "2",
     ingredients: [
       "120g rice noodles",

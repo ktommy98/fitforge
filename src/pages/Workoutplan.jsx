@@ -12,53 +12,53 @@ export default function WorkoutPlan() {
     const query = inputText.toLowerCase();
     if (query === "chest") {
       setImagesToShow([
-        { src: "/src/pages/media/chest1.gif", title: "Flat Dumbbell Press" },
-        { src: "/src/pages/media/chest2.webp", title: "Incline Dumbbell Press" },
-        { src: "/src/pages/media/chest3.gif", title: "Bench Press" },
-        { src: "/src/pages/media/chest4.gif", title: "Chest Fly" },
+        { src: "/media/chest1.gif", title: "Flat Dumbbell Press" },
+        { src: "/media/chest2.webp", title: "Incline Dumbbell Press" },
+        { src: "/media/chest3.gif", title: "Bench Press" },
+        { src: "/media/chest4.gif", title: "Chest Fly" },
       ]);
     } else if (query === "triceps") {
       setImagesToShow([
-        { src: "/src/pages/media/triceps1.gif", title: "Triceps Kickbacks" },
-        { src: "/src/pages/media/triceps2.gif", title: "Dips" },
-        { src: "/src/pages/media/triceps3.gif", title: "Triceps Pushdowns" },
-        { src: "/src/pages/media/triceps4.gif", title: "Rope Pushovers" },
+        { src: "/media/triceps1.gif", title: "Triceps Kickbacks" },
+        { src: "/media/triceps2.gif", title: "Dips" },
+        { src: "/media/triceps3.gif", title: "Triceps Pushdowns" },
+        { src: "/media/triceps4.gif", title: "Rope Pushovers" },
       ]);
     } else if (query === "shoulders") {
       setImagesToShow([
-        { src: "/src/pages/media/shoulder1.gif", title: "Dumbbel Cuban Press" },
-        { src: "/src/pages/media/shoulder2.gif", title: "Front Delts Raises" },
-        { src: "/src/pages/media/shoulder3.gif", title: "Dumbbell Seated Front Raise" },
+        { src: "/media/shoulder1.gif", title: "Dumbbel Cuban Press" },
+        { src: "/media/shoulder2.gif", title: "Front Delts Raises" },
+        { src: "/media/shoulder3.gif", title: "Dumbbell Seated Front Raise" },
       ]);
     } else if (query === "back") {
       setImagesToShow([
-        { src: "/src/pages/media/back1.webp", title: "Deadlift" },
-        { src: "/src/pages/media/back2.webp", title: "Dumbbell Row" },
-        { src: "/src/pages/media/back3.webp", title: "T-Bar Row" },
+        { src: "/media/back1.webp", title: "Deadlift" },
+        { src: "/media/back2.webp", title: "Dumbbell Row" },
+        { src: "/media/back3.webp", title: "T-Bar Row" },
       ]);
     } else if (query === "biceps") {
       setImagesToShow([
-        { src: "/src/pages/media/biceps1.gif", title: "Curls" },
-        { src: "/src/pages/media/biceps2.gif", title: "Rope Hammer Curls" },
-        { src: "/src/pages/media/biceps3.gif", title: "Straight Bar Curls" },
-        { src: "/src/pages/media/biceps4.gif", title: "Alternating Hammer Curls" },
-        { src: "/src/pages/media/biceps5.gif", title: "Machine Curls" },
+        { src: "/media/biceps1.gif", title: "Curls" },
+        { src: "/media/biceps2.gif", title: "Rope Hammer Curls" },
+        { src: "/media/biceps3.gif", title: "Straight Bar Curls" },
+        { src: "/media/biceps4.gif", title: "Alternating Hammer Curls" },
+        { src: "/media/biceps5.gif", title: "Machine Curls" },
       ]);
     } else if (query === "abs") {
       setImagesToShow([
-        { src: "/src/pages/media/abs1.webp", title: "Abs" },
-        { src: "/src/pages/media/abs2.gif", title: "Situps" },
-        { src: "/src/pages/media/abs3.gif", title: "Decline Situps" },
-        { src: "/src/pages/media/abs4.webp", title: "Decline Situps with Weight" },
+        { src: "/media/abs1.webp", title: "Abs" },
+        { src: "/media/abs2.gif", title: "Situps" },
+        { src: "/media/abs3.gif", title: "Decline Situps" },
+        { src: "/media/abs4.webp", title: "Decline Situps with Weight" },
       ]);
     } else if (query === "legs") {
       setImagesToShow([
-        { src: "/src/pages/media/legs6.gif", title: "Front Squats" },
-        { src: "/src/pages/media/legs1.gif", title: "Squats" },
-        { src: "/src/pages/media/legs2.gif", title: "Lunges" },
-        { src: "/src/pages/media/legs3.jfif", title: "Seated Calf Raises" },
-        { src: "/src/pages/media/legs4.webp", title: "Standing Calf Raises" },
-        { src: "/src/pages/media/legs5.gif", title: "Standing Calf Raises with Dumbbells" },
+        { src: "/media/legs6.gif", title: "Front Squats" },
+        { src: "/media/legs1.gif", title: "Squats" },
+        { src: "/media/legs2.gif", title: "Lunges" },
+        { src: "/media/legs3.jfif", title: "Seated Calf Raises" },
+        { src: "/media/legs4.webp", title: "Standing Calf Raises" },
+        { src: "/media/legs5.gif", title: "Standing Calf Raises with Dumbbells" },
       ]);
     } else {
       setImagesToShow([]);
