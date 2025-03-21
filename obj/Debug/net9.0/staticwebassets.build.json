@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ffRamlxTtNKGX6RoCWhc3NQVB/WkkWN58W3nmB5C0Fs=",
+  "Hash": "U1Rw4YWgTf5kA9FNQHZRPpwBOvNyCsqPhd4UGo23URI=",
   "Source": "fitforge",
   "BasePath": "/",
   "Mode": "Root",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "manifest",
-      "Fingerprint": "th5vh9xn28",
-      "Integrity": "b40bgezv2qKSgbfNLZgJnyDSqc3b5ZY0+xNXtfnTuF8=",
+      "Fingerprint": "7zzgmeltb3",
+      "Integrity": "I3j1KHTR3t97sjba9QO/9W9PNmR/tmZFm5KjU57MW7Q=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net9.0\\blazor.boot.json"
@@ -199,8 +199,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "4j6gfhkc4p",
-      "Integrity": "EBiRZnCqDS9TVoWPEft7rgBlVjvQ3wqxt8rEniV6fC8=",
+      "Fingerprint": "14gwji45lv",
+      "Integrity": "kRQScY1Ku6wox09IaiZ44BWjdWl3OiQ8q0s+np5dP1o=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net9.0\\fitforge.pdb"
@@ -220,8 +220,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "dhzno9eaxf",
-      "Integrity": "YU92yQ0UynBo8UokOfz+WDxNd06/l9wmNy1n2CMBctw=",
+      "Fingerprint": "w0jj3qsn1d",
+      "Integrity": "EPJxMCIGsb5DOcyqGBHUqX8i71pXYKjcGO66tsljGIE=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\webcil\\fitforge.wasm"
@@ -5666,12 +5666,12 @@
       "OriginalItemSpec": "C:\\Users\\Asus\\fitforge\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Text.Json.wasm"
     },
     {
-      "Identity": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\76txfua8gm-4j6gfhkc4p.gz",
+      "Identity": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\76txfua8gm-14gwji45lv.gz",
       "SourceId": "fitforge",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/fitforge#[.{fingerprint=4j6gfhkc4p}]!.pdb.gz",
+      "RelativePath": "_framework/fitforge#[.{fingerprint=14gwji45lv}]!.pdb.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -5680,8 +5680,8 @@
       "RelatedAsset": "C:\\Users\\Asus\\fitforge\\bin\\Debug\\net9.0\\wwwroot\\_framework\\fitforge.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "fad03uwdd1",
-      "Integrity": "R55IJ1ux6OVuSfQrYbU8vlcWLk1Wdaft14+e2sCbK9I=",
+      "Fingerprint": "1mnba9zcse",
+      "Integrity": "t3Xpux+ZzVaw7EwxUtWkF3uIEWIDJ8yWCs7nr1e9/w0=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Asus\\fitforge\\bin\\Debug\\net9.0\\wwwroot\\_framework\\fitforge.pdb"
@@ -9194,7 +9194,7 @@
       "OriginalItemSpec": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\scopedcss\\bundle\\fitforge.styles.css"
     },
     {
-      "Identity": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\x4gigph4jw-th5vh9xn28.gz",
+      "Identity": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\x4gigph4jw-7zzgmeltb3.gz",
       "SourceId": "fitforge",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\",
@@ -9208,8 +9208,8 @@
       "RelatedAsset": "C:\\Users\\Asus\\fitforge\\bin\\Debug\\net9.0\\wwwroot\\_framework\\blazor.boot.json",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "6xgkfrkb07",
-      "Integrity": "VrLLgU0J2tWp2N7AqskyuAkEurhAF/8lbGsuxvQWuWg=",
+      "Fingerprint": "6nvbmfqrbt",
+      "Integrity": "DrksG6NLA1GlktpIMZo/ukARMqbdoYFErZgBp5jULew=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Asus\\fitforge\\bin\\Debug\\net9.0\\wwwroot\\_framework\\blazor.boot.json"
@@ -9425,12 +9425,12 @@
       "OriginalItemSpec": "C:\\Users\\Asus\\fitforge\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Drawing.wasm"
     },
     {
-      "Identity": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\yafff7uuev-dhzno9eaxf.gz",
+      "Identity": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\yafff7uuev-w0jj3qsn1d.gz",
       "SourceId": "fitforge",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/fitforge#[.{fingerprint=dhzno9eaxf}]!.wasm.gz",
+      "RelativePath": "_framework/fitforge#[.{fingerprint=w0jj3qsn1d}]!.wasm.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -9439,8 +9439,8 @@
       "RelatedAsset": "C:\\Users\\Asus\\fitforge\\bin\\Debug\\net9.0\\wwwroot\\_framework\\fitforge.wasm",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "ltrzf7hgxo",
-      "Integrity": "Z402wLcgOGPCaF9BAMdi2GRkDS1FGWEpi3E6lqdk3S8=",
+      "Fingerprint": "9xmt2ozv2w",
+      "Integrity": "s1Rd0h+V/tyJijVbebZsVh/lh632wiAKMOax4hfWdeA=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Asus\\fitforge\\bin\\Debug\\net9.0\\wwwroot\\_framework\\fitforge.wasm"
@@ -10747,7 +10747,46 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"b40bgezv2qKSgbfNLZgJnyDSqc3b5ZY0+xNXtfnTuF8=\""
+          "Value": "\"I3j1KHTR3t97sjba9QO/9W9PNmR/tmZFm5KjU57MW7Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 17:19:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-I3j1KHTR3t97sjba9QO/9W9PNmR/tmZFm5KjU57MW7Q="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/blazor.boot.json",
+      "AssetFile": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\x4gigph4jw-7zzgmeltb3.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000081201786"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12314"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DrksG6NLA1GlktpIMZo/ukARMqbdoYFErZgBp5jULew=\""
         },
         {
           "Name": "Last-Modified",
@@ -10756,45 +10795,6 @@
         {
           "Name": "Cache-Control",
           "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-b40bgezv2qKSgbfNLZgJnyDSqc3b5ZY0+xNXtfnTuF8="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/blazor.boot.json",
-      "AssetFile": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\x4gigph4jw-th5vh9xn28.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000081221572"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "12311"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"VrLLgU0J2tWp2N7AqskyuAkEurhAF/8lbGsuxvQWuWg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 16:36:34 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -10810,19 +10810,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"b40bgezv2qKSgbfNLZgJnyDSqc3b5ZY0+xNXtfnTuF8=\""
+          "Value": "W/\"I3j1KHTR3t97sjba9QO/9W9PNmR/tmZFm5KjU57MW7Q=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-b40bgezv2qKSgbfNLZgJnyDSqc3b5ZY0+xNXtfnTuF8="
+          "Value": "sha256-I3j1KHTR3t97sjba9QO/9W9PNmR/tmZFm5KjU57MW7Q="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json.gz",
-      "AssetFile": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\x4gigph4jw-th5vh9xn28.gz",
+      "AssetFile": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\x4gigph4jw-7zzgmeltb3.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10831,7 +10831,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12311"
+          "Value": "12314"
         },
         {
           "Name": "Content-Type",
@@ -10839,11 +10839,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"VrLLgU0J2tWp2N7AqskyuAkEurhAF/8lbGsuxvQWuWg=\""
+          "Value": "\"DrksG6NLA1GlktpIMZo/ukARMqbdoYFErZgBp5jULew=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 16:36:34 GMT"
+          "Value": "Fri, 21 Mar 2025 16:37:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10861,7 +10861,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-VrLLgU0J2tWp2N7AqskyuAkEurhAF/8lbGsuxvQWuWg="
+          "Value": "sha256-DrksG6NLA1GlktpIMZo/ukARMqbdoYFErZgBp5jULew="
         }
       ]
     },
@@ -12791,7 +12791,7 @@
       ]
     },
     {
-      "Route": "_framework/fitforge.4j6gfhkc4p.pdb",
+      "Route": "_framework/fitforge.14gwji45lv.pdb",
       "AssetFile": "C:\\Users\\Asus\\fitforge\\bin\\Debug\\net9.0\\wwwroot\\_framework\\fitforge.pdb",
       "Selectors": [],
       "ResponseHeaders": [
@@ -12801,7 +12801,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "26164"
+          "Value": "26140"
         },
         {
           "Name": "Content-Type",
@@ -12809,11 +12809,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"EBiRZnCqDS9TVoWPEft7rgBlVjvQ3wqxt8rEniV6fC8=\""
+          "Value": "\"kRQScY1Ku6wox09IaiZ44BWjdWl3OiQ8q0s+np5dP1o=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 16:36:31 GMT"
+          "Value": "Fri, 21 Mar 2025 17:19:53 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12823,7 +12823,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "4j6gfhkc4p"
+          "Value": "14gwji45lv"
         },
         {
           "Name": "label",
@@ -12831,18 +12831,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-EBiRZnCqDS9TVoWPEft7rgBlVjvQ3wqxt8rEniV6fC8="
+          "Value": "sha256-kRQScY1Ku6wox09IaiZ44BWjdWl3OiQ8q0s+np5dP1o="
         }
       ]
     },
     {
-      "Route": "_framework/fitforge.4j6gfhkc4p.pdb",
-      "AssetFile": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\76txfua8gm-4j6gfhkc4p.gz",
+      "Route": "_framework/fitforge.14gwji45lv.pdb",
+      "AssetFile": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\76txfua8gm-14gwji45lv.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000052394425"
+          "Quality": "0.000052430137"
         }
       ],
       "ResponseHeaders": [
@@ -12852,15 +12852,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "19085"
+          "Value": "19072"
         },
         {
           "Name": "ETag",
-          "Value": "\"R55IJ1ux6OVuSfQrYbU8vlcWLk1Wdaft14+e2sCbK9I=\""
+          "Value": "\"t3Xpux+ZzVaw7EwxUtWkF3uIEWIDJ8yWCs7nr1e9/w0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 16:36:34 GMT"
+          "Value": "Fri, 21 Mar 2025 17:19:56 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12880,13 +12880,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"EBiRZnCqDS9TVoWPEft7rgBlVjvQ3wqxt8rEniV6fC8=\""
+          "Value": "W/\"kRQScY1Ku6wox09IaiZ44BWjdWl3OiQ8q0s+np5dP1o=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "4j6gfhkc4p"
+          "Value": "14gwji45lv"
         },
         {
           "Name": "label",
@@ -12894,13 +12894,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-EBiRZnCqDS9TVoWPEft7rgBlVjvQ3wqxt8rEniV6fC8="
+          "Value": "sha256-kRQScY1Ku6wox09IaiZ44BWjdWl3OiQ8q0s+np5dP1o="
         }
       ]
     },
     {
-      "Route": "_framework/fitforge.4j6gfhkc4p.pdb.gz",
-      "AssetFile": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\76txfua8gm-4j6gfhkc4p.gz",
+      "Route": "_framework/fitforge.14gwji45lv.pdb.gz",
+      "AssetFile": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\76txfua8gm-14gwji45lv.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -12909,7 +12909,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "19085"
+          "Value": "19072"
         },
         {
           "Name": "Content-Type",
@@ -12917,11 +12917,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"R55IJ1ux6OVuSfQrYbU8vlcWLk1Wdaft14+e2sCbK9I=\""
+          "Value": "\"t3Xpux+ZzVaw7EwxUtWkF3uIEWIDJ8yWCs7nr1e9/w0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 16:36:34 GMT"
+          "Value": "Fri, 21 Mar 2025 17:19:56 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12939,7 +12939,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "4j6gfhkc4p"
+          "Value": "14gwji45lv"
         },
         {
           "Name": "label",
@@ -12947,168 +12947,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-R55IJ1ux6OVuSfQrYbU8vlcWLk1Wdaft14+e2sCbK9I="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/fitforge.dhzno9eaxf.wasm",
-      "AssetFile": "C:\\Users\\Asus\\fitforge\\bin\\Debug\\net9.0\\wwwroot\\_framework\\fitforge.wasm",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "25877"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"YU92yQ0UynBo8UokOfz+WDxNd06/l9wmNy1n2CMBctw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 16:36:32 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "dhzno9eaxf"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/fitforge.wasm"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-YU92yQ0UynBo8UokOfz+WDxNd06/l9wmNy1n2CMBctw="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/fitforge.dhzno9eaxf.wasm",
-      "AssetFile": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\yafff7uuev-dhzno9eaxf.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000091726289"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "10901"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Z402wLcgOGPCaF9BAMdi2GRkDS1FGWEpi3E6lqdk3S8=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 16:36:34 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"YU92yQ0UynBo8UokOfz+WDxNd06/l9wmNy1n2CMBctw=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "dhzno9eaxf"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/fitforge.wasm"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-YU92yQ0UynBo8UokOfz+WDxNd06/l9wmNy1n2CMBctw="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/fitforge.dhzno9eaxf.wasm.gz",
-      "AssetFile": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\yafff7uuev-dhzno9eaxf.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "10901"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Z402wLcgOGPCaF9BAMdi2GRkDS1FGWEpi3E6lqdk3S8=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 16:36:34 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "dhzno9eaxf"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/fitforge.wasm.gz"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Z402wLcgOGPCaF9BAMdi2GRkDS1FGWEpi3E6lqdk3S8="
+          "Value": "sha256-t3Xpux+ZzVaw7EwxUtWkF3uIEWIDJ8yWCs7nr1e9/w0="
         }
       ]
     },
@@ -13123,7 +12962,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "26164"
+          "Value": "26140"
         },
         {
           "Name": "Content-Type",
@@ -13131,11 +12970,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"EBiRZnCqDS9TVoWPEft7rgBlVjvQ3wqxt8rEniV6fC8=\""
+          "Value": "\"kRQScY1Ku6wox09IaiZ44BWjdWl3OiQ8q0s+np5dP1o=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 16:36:31 GMT"
+          "Value": "Fri, 21 Mar 2025 17:19:53 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13145,18 +12984,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-EBiRZnCqDS9TVoWPEft7rgBlVjvQ3wqxt8rEniV6fC8="
+          "Value": "sha256-kRQScY1Ku6wox09IaiZ44BWjdWl3OiQ8q0s+np5dP1o="
         }
       ]
     },
     {
       "Route": "_framework/fitforge.pdb",
-      "AssetFile": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\76txfua8gm-4j6gfhkc4p.gz",
+      "AssetFile": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\76txfua8gm-14gwji45lv.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000052394425"
+          "Quality": "0.000052430137"
         }
       ],
       "ResponseHeaders": [
@@ -13166,15 +13005,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "19085"
+          "Value": "19072"
         },
         {
           "Name": "ETag",
-          "Value": "\"R55IJ1ux6OVuSfQrYbU8vlcWLk1Wdaft14+e2sCbK9I=\""
+          "Value": "\"t3Xpux+ZzVaw7EwxUtWkF3uIEWIDJ8yWCs7nr1e9/w0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 16:36:34 GMT"
+          "Value": "Fri, 21 Mar 2025 17:19:56 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13194,19 +13033,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"EBiRZnCqDS9TVoWPEft7rgBlVjvQ3wqxt8rEniV6fC8=\""
+          "Value": "W/\"kRQScY1Ku6wox09IaiZ44BWjdWl3OiQ8q0s+np5dP1o=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-EBiRZnCqDS9TVoWPEft7rgBlVjvQ3wqxt8rEniV6fC8="
+          "Value": "sha256-kRQScY1Ku6wox09IaiZ44BWjdWl3OiQ8q0s+np5dP1o="
         }
       ]
     },
     {
       "Route": "_framework/fitforge.pdb.gz",
-      "AssetFile": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\76txfua8gm-4j6gfhkc4p.gz",
+      "AssetFile": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\76txfua8gm-14gwji45lv.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -13215,7 +13054,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "19085"
+          "Value": "19072"
         },
         {
           "Name": "Content-Type",
@@ -13223,11 +13062,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"R55IJ1ux6OVuSfQrYbU8vlcWLk1Wdaft14+e2sCbK9I=\""
+          "Value": "\"t3Xpux+ZzVaw7EwxUtWkF3uIEWIDJ8yWCs7nr1e9/w0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 16:36:34 GMT"
+          "Value": "Fri, 21 Mar 2025 17:19:56 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13245,7 +13084,168 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-R55IJ1ux6OVuSfQrYbU8vlcWLk1Wdaft14+e2sCbK9I="
+          "Value": "sha256-t3Xpux+ZzVaw7EwxUtWkF3uIEWIDJ8yWCs7nr1e9/w0="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/fitforge.w0jj3qsn1d.wasm",
+      "AssetFile": "C:\\Users\\Asus\\fitforge\\bin\\Debug\\net9.0\\wwwroot\\_framework\\fitforge.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25877"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EPJxMCIGsb5DOcyqGBHUqX8i71pXYKjcGO66tsljGIE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 17:19:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w0jj3qsn1d"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/fitforge.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-EPJxMCIGsb5DOcyqGBHUqX8i71pXYKjcGO66tsljGIE="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/fitforge.w0jj3qsn1d.wasm",
+      "AssetFile": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\yafff7uuev-w0jj3qsn1d.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000092004784"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10868"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"s1Rd0h+V/tyJijVbebZsVh/lh632wiAKMOax4hfWdeA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 17:19:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"EPJxMCIGsb5DOcyqGBHUqX8i71pXYKjcGO66tsljGIE=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w0jj3qsn1d"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/fitforge.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-EPJxMCIGsb5DOcyqGBHUqX8i71pXYKjcGO66tsljGIE="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/fitforge.w0jj3qsn1d.wasm.gz",
+      "AssetFile": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\yafff7uuev-w0jj3qsn1d.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10868"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"s1Rd0h+V/tyJijVbebZsVh/lh632wiAKMOax4hfWdeA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 17:19:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w0jj3qsn1d"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/fitforge.wasm.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-s1Rd0h+V/tyJijVbebZsVh/lh632wiAKMOax4hfWdeA="
         }
       ]
     },
@@ -13268,11 +13268,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"YU92yQ0UynBo8UokOfz+WDxNd06/l9wmNy1n2CMBctw=\""
+          "Value": "\"EPJxMCIGsb5DOcyqGBHUqX8i71pXYKjcGO66tsljGIE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 16:36:32 GMT"
+          "Value": "Fri, 21 Mar 2025 17:19:53 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13282,18 +13282,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-YU92yQ0UynBo8UokOfz+WDxNd06/l9wmNy1n2CMBctw="
+          "Value": "sha256-EPJxMCIGsb5DOcyqGBHUqX8i71pXYKjcGO66tsljGIE="
         }
       ]
     },
     {
       "Route": "_framework/fitforge.wasm",
-      "AssetFile": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\yafff7uuev-dhzno9eaxf.gz",
+      "AssetFile": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\yafff7uuev-w0jj3qsn1d.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000091726289"
+          "Quality": "0.000092004784"
         }
       ],
       "ResponseHeaders": [
@@ -13303,15 +13303,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "10901"
+          "Value": "10868"
         },
         {
           "Name": "ETag",
-          "Value": "\"Z402wLcgOGPCaF9BAMdi2GRkDS1FGWEpi3E6lqdk3S8=\""
+          "Value": "\"s1Rd0h+V/tyJijVbebZsVh/lh632wiAKMOax4hfWdeA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 16:36:34 GMT"
+          "Value": "Fri, 21 Mar 2025 17:19:56 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13331,19 +13331,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"YU92yQ0UynBo8UokOfz+WDxNd06/l9wmNy1n2CMBctw=\""
+          "Value": "W/\"EPJxMCIGsb5DOcyqGBHUqX8i71pXYKjcGO66tsljGIE=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-YU92yQ0UynBo8UokOfz+WDxNd06/l9wmNy1n2CMBctw="
+          "Value": "sha256-EPJxMCIGsb5DOcyqGBHUqX8i71pXYKjcGO66tsljGIE="
         }
       ]
     },
     {
       "Route": "_framework/fitforge.wasm.gz",
-      "AssetFile": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\yafff7uuev-dhzno9eaxf.gz",
+      "AssetFile": "C:\\Users\\Asus\\fitforge\\obj\\Debug\\net9.0\\compressed\\yafff7uuev-w0jj3qsn1d.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -13352,7 +13352,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "10901"
+          "Value": "10868"
         },
         {
           "Name": "Content-Type",
@@ -13360,11 +13360,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Z402wLcgOGPCaF9BAMdi2GRkDS1FGWEpi3E6lqdk3S8=\""
+          "Value": "\"s1Rd0h+V/tyJijVbebZsVh/lh632wiAKMOax4hfWdeA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 16:36:34 GMT"
+          "Value": "Fri, 21 Mar 2025 17:19:56 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13382,7 +13382,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Z402wLcgOGPCaF9BAMdi2GRkDS1FGWEpi3E6lqdk3S8="
+          "Value": "sha256-s1Rd0h+V/tyJijVbebZsVh/lh632wiAKMOax4hfWdeA="
         }
       ]
     },
