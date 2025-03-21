@@ -1,4 +1,67 @@
 ﻿@page "/"
-<PageTitle>Profile Settings</PageTitle>
+@inject HttpClient Http
+@inject NavigationManager Navigation
 
-Welcome!
+<h2 class="page-title">My Profile</h2>
+
+@if (profile != null)
+{
+    <div class="profile-card">
+        <div class="profile-header">
+        </div>
+        <div class="profile-details">
+            <div class="profile-field">
+                <span class="field-label">Age:</span>
+                <span class="field-value">@profile.Age</span>
+            </div>
+            <div class="profile-field">
+                <span class="field-label">Height (cm):</span>
+                <span class="field-value">@profile.Height</span>
+            </div>
+            <div class="profile-field">
+                <span class="field-label">Weight (kg):</span>
+                <span class="field-value">@profile.Weight</span>
+            </div>
+            <div class="profile-field">
+                <span class="field-label">Target Weight (kg):</span>
+                <span class="field-value">@profile.TargetWeight</span>
+            </div>
+            <div class="profile-field">
+                <span class="field-label">Exercise Level:</span>
+                <span class="field-value">@profile.ExerciseLevel</span>
+            </div>
+            <button class="edit-button" @onclick="EditProfile">Edit Profile</button>
+        </div>
+    </div>
+}
+else
+{
+    <div class="no-profile">
+        <p>No profile data found. Please fill out your profile!</p>
+        <button class="edit-button" @onclick="EditProfile">Go to Profile Setup</button>
+    </div>
+}
+
+@code {
+    private Profile profile;
+
+    protected override async Task OnInitializedAsync()
+    {
+        profile = await Http.GetFromJsonAsync<Profile>("http://localhost:5058/api/profile");
+
+    }
+
+    private void EditProfile()
+    {
+        Navigation.NavigateTo("http://localhost:5173/profilesetup", true);
+    }
+
+    public class Profile
+    {
+        public int Age { get; set; }
+        public int Height { get; set; }
+        public int Weight { get; set; }
+        public int TargetWeight { get; set; }
+        public string ExerciseLevel { get; set; }
+    }
+}

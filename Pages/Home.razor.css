@@ -1,28 +1,78 @@
-.profile-details {
+.page-title {
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
     font-family: 'Anton', sans-serif;
+    color: #BF3131;
+}
+
+.profile-card {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-family: sans-serif;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.profile-header h3 {
+    margin: 0;
     color: #333;
 }
 
-.profile-details p {
-    font-size: 1.1rem;
-    margin: 0.5rem 0;
-}
-
-.update-button {
+.edit-button {
     background-color: #7D0A0A;
     color: white;
     border: none;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 5px;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 0.9rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 1rem;
 }
 
-.update-button:hover {
+.edit-button:hover {
     background-color: #BF3131;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.profile-field {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.field-label {
+    font-weight: bold;
+    color: #555;
+}
+
+.field-value {
+    color: #333;
+}
+
+.no-profile {
+    text-align: center;
+    margin-top: 3rem;
+    font-family: sans-serif;
+}
+
+.no-profile p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
 }

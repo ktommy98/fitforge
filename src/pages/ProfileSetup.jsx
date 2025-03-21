@@ -18,16 +18,15 @@ export default function ProfileSetup({ onProfileComplete }) {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Adatok mentése localStorage-ba:
+    await fetch("http://localhost:5058/api/profile", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
     localStorage.setItem("profileData", JSON.stringify(formData));
-
-    // Ezzel jelezzük a szülő komponensnek, hogy a profil kitöltött
     onProfileComplete();
-
-    // Navigálás a főoldalra
     navigate("/");
   };
 
