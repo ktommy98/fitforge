@@ -1,4 +1,3 @@
-// ProfileSetup.jsx
 import React, { useState } from "react";
 import { Flex, Heading, TextField, SelectField, Button } from "@aws-amplify/ui-react";
 import { useNavigate } from "react-router-dom";
