@@ -273,40 +273,20 @@ main[b-s1b4nbr9pb] {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     font-family: sans-serif;
+    text-align: center;
 }
 
-.profile-header[b-hzkul5j248] {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.profile-image[b-hzkul5j248] {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #7D0A0A;
     margin-bottom: 1rem;
 }
 
-.profile-header h3[b-hzkul5j248] {
-    margin: 0;
-    color: #333;
-}
-
-.edit-button[b-hzkul5j248] {
-    background-color: #7D0A0A;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.edit-button:hover[b-hzkul5j248] {
-    background-color: #BF3131;
-}
-
 .profile-details[b-hzkul5j248] {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .profile-field[b-hzkul5j248] {
@@ -315,6 +295,7 @@ main[b-s1b4nbr9pb] {
     background-color: #f9f9f9;
     padding: 0.5rem;
     border-radius: 4px;
+    margin-bottom: 0.5rem;
 }
 
 .field-label[b-hzkul5j248] {
@@ -326,13 +307,24 @@ main[b-s1b4nbr9pb] {
     color: #333;
 }
 
+.update-button[b-hzkul5j248] {
+    background-color: #7D0A0A;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.update-button:hover[b-hzkul5j248] {
+    background-color: #BF3131;
+}
+
 .no-profile[b-hzkul5j248] {
     text-align: center;
     margin-top: 3rem;
     font-family: sans-serif;
-}
-
-.no-profile p[b-hzkul5j248] {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("fitforge")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+810eff5cc6dec6df3392096273cde0023e93a0bd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9c511e0b83740f00e17d5c87b50221153e79853")]
 [assembly: System.Reflection.AssemblyProductAttribute("fitforge")]
 [assembly: System.Reflection.AssemblyTitleAttribute("fitforge")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

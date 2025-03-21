@@ -7,8 +7,10 @@
 @if (profile != null)
 {
     <div class="profile-card">
-        <div class="profile-header">
-        </div>
+        <!-- Profil kép -->
+        <img src="/images/profile_picture.avif" alt="Profile Picture" class="profile-image" />
+
+        <!-- Profil adatok -->
         <div class="profile-details">
             <div class="profile-field">
                 <span class="field-label">Age:</span>
@@ -30,15 +32,15 @@
                 <span class="field-label">Exercise Level:</span>
                 <span class="field-value">@profile.ExerciseLevel</span>
             </div>
-            <button class="edit-button" @onclick="EditProfile">Edit Profile</button>
         </div>
+        <button class="update-button" @onclick="EditProfile">Edit Profile</button>
     </div>
 }
 else
 {
     <div class="no-profile">
-        <p>No profile data found. Please fill out your profile!</p>
-        <button class="edit-button" @onclick="EditProfile">Go to Profile Setup</button>
+        <p>No profile data available. Please complete your profile.</p>
+        <button class="update-button" @onclick="EditProfile">Complete Profile</button>
     </div>
 }
 
@@ -48,7 +50,19 @@ else
     protected override async Task OnInitializedAsync()
     {
         profile = await Http.GetFromJsonAsync<Profile>("http://localhost:5058/api/profile");
-
+        
+        if (profile == null)
+        {
+            profile = new Profile
+            {
+                Age = 0,
+                Height = 0,
+                Weight = 0,
+                TargetWeight = 0,
+                ExerciseLevel = "",
+                ProfilePictureUrl = "https://via.placeholder.com/150"
+            };
+        }
     }
 
     private void EditProfile()
@@ -63,5 +77,6 @@ else
         public int Weight { get; set; }
         public int TargetWeight { get; set; }
         public string ExerciseLevel { get; set; }
+        public string ProfilePictureUrl { get; set; } = "https://via.placeholder.com/150";
     }
 }

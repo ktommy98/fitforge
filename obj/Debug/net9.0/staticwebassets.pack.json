@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\images\\friends.png"
     },
     {
+      "Id": "C:\\Users\\Asus\\fitforge\\wwwroot\\images\\profile_picture.avif",
+      "PackagePath": "staticwebassets\\images\\profile_picture.avif"
+    },
+    {
       "Id": "C:\\Users\\Asus\\fitforge\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },

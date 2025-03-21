@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "fitforge",
   "resources": {
-    "hash": "sha256-mTeT3eAZJ4fhiHscxefqGZA5cpIJQhWiK2gzW1feHzU=",
+    "hash": "sha256-lJzZ48Uq+e1s5Ve78jext5FhN2agD8zBHk7GeRGn6xg=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Authorization.qe23mgxr71.wasm": "Microsoft.AspNetCore.Authorization.wasm",
       "Microsoft.AspNetCore.Components.flveird317.wasm": "Microsoft.AspNetCore.Components.wasm",
@@ -201,8 +201,8 @@
       "icudt_CJK.tjcz0u77k5.dat": "icudt_CJK.dat",
       "icudt_EFIGS.tptq2av103.dat": "icudt_EFIGS.dat",
       "icudt_no_CJK.lfu7j35m59.dat": "icudt_no_CJK.dat",
-      "fitforge.o71eh7dh75.wasm": "fitforge.wasm",
-      "fitforge.htxoi50zf8.pdb": "fitforge.pdb"
+      "fitforge.dhzno9eaxf.wasm": "fitforge.wasm",
+      "fitforge.4j6gfhkc4p.pdb": "fitforge.pdb"
     },
     "jsModuleNative": {
       "dotnet.native.hmanx9razn.js": "sha256-d7UNSArplVrX3arY2Kmhxp1wN79ng8hLqIBrkiQ9Gbo="
@@ -412,10 +412,10 @@
       "WindowsBase.377bly7twj.wasm": "sha256-0VmBdMjdc0nZGHDSfaGirT6y3mJTM0qx8eqCUC/rpiE=",
       "mscorlib.o0184ey5ia.wasm": "sha256-2GxNKZQJVJvYMUxSTuXa5V2qxawSMMHZtwG33SKVCZU=",
       "netstandard.hb3h2rr8mk.wasm": "sha256-DWn9+RH/ElZQ6imlYqVwZvir1KTzNwY18AzGmnyiymU=",
-      "fitforge.o71eh7dh75.wasm": "sha256-XMW2jP675p7fvjiIVjoZNm44oqaqwZZJrl4J9sGEtgw="
+      "fitforge.dhzno9eaxf.wasm": "sha256-YU92yQ0UynBo8UokOfz+WDxNd06/l9wmNy1n2CMBctw="
     },
     "pdb": {
-      "fitforge.htxoi50zf8.pdb": "sha256-y/hprLbp5K7UcOhHBghC9qk/ec5J2+C/7KzBJ0HXfRI="
+      "fitforge.4j6gfhkc4p.pdb": "sha256-EBiRZnCqDS9TVoWPEft7rgBlVjvQ3wqxt8rEniV6fC8="
     }
   },
   "cacheBootResources": true,

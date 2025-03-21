@@ -241,12 +241,21 @@ export default function Home() {
                 fontWeight: "bold",
                 fontSize: "1rem",
                 cursor: "pointer",
-                transition: "background 0.3s ease-in-out",
+                transition: "all 0.3s ease-in-out",
                 marginTop: "2rem",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = "scale(1.05)";
+                e.target.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.3)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = "scale(1)";
+                e.target.style.boxShadow = "none";
               }}
             >
               Sign Out
             </Button>
+
           </div>
 
           {/* Fő tartalom */}
