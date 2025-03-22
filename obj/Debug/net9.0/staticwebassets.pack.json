@@ -21,8 +21,28 @@
       "PackagePath": "staticwebassets\\icon-192.png"
     },
     {
+      "Id": "C:\\Users\\Asus\\fitforge\\wwwroot\\images\\alice.jfif",
+      "PackagePath": "staticwebassets\\images\\alice.jfif"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\fitforge\\wwwroot\\images\\bob.jfif",
+      "PackagePath": "staticwebassets\\images\\bob.jfif"
+    },
+    {
       "Id": "C:\\Users\\Asus\\fitforge\\wwwroot\\images\\friends.png",
       "PackagePath": "staticwebassets\\images\\friends.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\fitforge\\wwwroot\\images\\jane.jfif",
+      "PackagePath": "staticwebassets\\images\\jane.jfif"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\fitforge\\wwwroot\\images\\john.jfif",
+      "PackagePath": "staticwebassets\\images\\john.jfif"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\fitforge\\wwwroot\\images\\michael.jfif",
+      "PackagePath": "staticwebassets\\images\\michael.jfif"
     },
     {
       "Id": "C:\\Users\\Asus\\fitforge\\wwwroot\\images\\profile_picture.avif",

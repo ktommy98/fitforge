@@ -1,9 +1,44 @@
 ﻿@page "/friends"
+@inject HttpClient Http
 
-<PageTitle>Friends</PageTitle>
+<h2 class="page-title">Friends</h2>
 
-<div class="friends-container">
-    <img src="images/friends.png" alt="Friends" class="friends-image" />
-    <h2>Connect with your friends and share your experiences!</h2>
-    <button class="add-friends-button">Add your friends +</button>
-</div>
+<input type="text" @bind="searchQuery" placeholder="Search for friends..." class="search-input" />
+
+@if (friends == null)
+{
+    <p>Loading friends...</p>
+}
+else
+{
+    <div class="friends-container">
+        @foreach (var friend in FilteredFriends)
+        {
+            <div class="friend-card">
+                <img src="@friend.ProfilePictureUrl" alt="@friend.Name" class="friend-image" />
+                <h3>@friend.Name</h3>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private string searchQuery = "";
+    private List<Friend> friends;
+
+    protected override async Task OnInitializedAsync()
+    {
+        friends = await Http.GetFromJsonAsync<List<Friend>>("http://localhost:5058/api/friends");
+    }
+
+    private IEnumerable<Friend> FilteredFriends =>
+        string.IsNullOrWhiteSpace(searchQuery)
+            ? friends
+            : friends.Where(f => f.Name.Contains(searchQuery, StringComparison.OrdinalIgnoreCase));
+
+    public class Friend
+    {
+        public string Name { get; set; }
+        public string ProfilePictureUrl { get; set; }
+    }
+}

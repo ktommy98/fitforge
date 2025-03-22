@@ -1,38 +1,47 @@
-.friends-container[b-tpp7pkvmig] {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-}
-
-.friends-image[b-tpp7pkvmig] {
-    max-width: 150%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    margin-bottom: 1.5rem;
-}
-
-.friends-container h2[b-tpp7pkvmig] {
+.page-title[b-tpp7pkvmig] {
     text-align: center;
+    margin-top: 2rem;
     font-family: 'Anton', sans-serif;
     color: #BF3131;
-    margin-bottom: 1.5rem;
-    padding: 0 1rem;
 }
 
-.add-friends-button[b-tpp7pkvmig] {
-    background-color: #7D0A0A;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.search-input[b-tpp7pkvmig] {
+    display: block;
+    width: 80%;
+    margin: 1rem auto;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-.add-friends-button:hover[b-tpp7pkvmig] {
-    background-color: #BF3131;
+.friends-container[b-tpp7pkvmig] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.friend-card[b-tpp7pkvmig] {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.friend-card:hover[b-tpp7pkvmig] {
+    transform: translateY(-5px);
+}
+
+.friend-image[b-tpp7pkvmig] {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
 }
