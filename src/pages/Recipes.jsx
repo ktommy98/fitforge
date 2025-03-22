@@ -133,6 +133,86 @@ const recipes = [
       fat: "4g",
     },
   },
+  {
+    title: "Garlic Broccoli Cream",
+    image: "/images/broccoli_cream_soup.jpg",
+    serving: "4",
+    ingredients: [
+      "600g broccoli",
+      "3 cloves garlic",
+      "115g rice cream (Alpro)",
+      "20g Natur Vegeta (seasoning)",
+      "Salt, pepper to taste"
+    ],
+    preparation:
+      "Bring water to a boil in a pot. Meanwhile, rinse and cut the broccoli into florets. Boil or steam the broccoli for about 15-20 minutes, until tender. Separately, sauté the garlic in a small amount of oil, then add the rice cream and seasoning. Once the broccoli is cooked, drain it, then add it to the sauce. Stir well and season with salt and pepper to taste. You can blend it if you prefer a creamy texture.",
+    nutrition: {
+      calories: "86 Kcal (1 serving)",
+      fat: "29g",
+      carbs: "8g",
+      protein: "49g",
+    },
+  },
+  {
+    title: "Curry Chicken with Beans",
+    image: "/images/chicken_bean_curry.jpg",
+    serving: "3",
+    ingredients: [
+      "350g chicken breast fillet",
+      "3 onions (~350-400g)",
+      "1 can (255g drained) red beans",
+      "10ml olive oil",
+      "Curry powder, turmeric, cayenne pepper, ground ginger",
+    ],
+    preparation:
+      "Cut the chicken breast into small pieces and slice the onions. Sauté them in olive oil with the spices. Then add the drained red beans. Cook for about 10-15 minutes, until the chicken is thoroughly cooked. Season to taste.",
+    nutrition: {
+      calories: "310 Kcal (1 serving)",
+      carbs: "8.9g",
+      fat: "5.1g",
+      protein: "21g",
+    },
+  },
+  {
+    title: "Fritatta",
+    image: "/images/fritatta.jpg",
+    serving: "1",
+    ingredients: [
+      "1 medium potato (150-180g)",
+      "2 whole eggs",
+      "5 egg whites (about 170g)",
+      "1 slice of lean ham",
+      "Veggies (tomato, peppers, mushrooms, spinach) - optional",
+    ],
+    preparation:
+      "Preheat your oven to 180°C (356°F). Slice the potato and bake it until soft (about 15-20 minutes). Meanwhile, prepare your veggies. Once the potato is almost done, crack the eggs and egg whites on top, add the ham and vegetables, and season as you like. Continue baking for another 10-15 minutes or until the eggs are fully cooked. Enjoy warm!",
+    nutrition: {
+      calories: "350 Kcal",
+      carbs: "37g",
+      protein: "24g",
+      fat: "11g",
+    },
+  },
+  {
+    title: "Chicken Tortilla Wrap",
+    image: "/images/chicken_wrap.jpg",
+    serving: "1",
+    ingredients: [
+      "1 tortilla (62g)",
+      "20g light sandwich spread (e.g., cream cheese)",
+      "Lettuce leaves, tomatoes, peppers, onions (optional)",
+      "70g chicken or turkey ham",
+    ],
+    preparation:
+      "Spread the tortilla with the light sandwich spread, then add lettuce, vegetables (tomatoes, peppers, onions) to taste, and the chicken/turkey ham. Roll it up and enjoy it cold or warm. You can also toast it lightly for a warm sandwich effect.",
+    nutrition: {
+      calories: "315 Kcal",
+      carbs: "39g",
+      fat: "7g",
+      protein: "24g",
+    },
+  },
+  
 ];
 
 export default function Recipes() {
