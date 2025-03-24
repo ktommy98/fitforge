@@ -15,15 +15,37 @@
     border-radius: 4px;
 }
 
-.friend-list {
-    list-style-type: none;
-    padding: 0;
+.friends-table {
     width: 80%;
-    margin: 0 auto;
+    margin: 1rem auto;
+    border-collapse: collapse;
+    font-family: 'Anton', sans-serif;
+    color: #333;
 }
 
-.friend-list li {
-    padding: 0.5rem;
-    border-bottom: 1px solid #ddd;
-    font-size: 1.1rem;
+.friends-table th, 
+.friends-table td {
+    border: 1px solid #ddd;
+    padding: 0.75rem 1rem;
+    text-align: left;
+}
+
+.friends-table th {
+    background-color: #BF3131;
+    color: #EEEEEE;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.friends-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.friends-table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.friends-table tr:hover {
+    background-color: #EAD196;
+    color: #7D0A0A;
 }

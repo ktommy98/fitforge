@@ -3,7 +3,7 @@
 
 <h2 class="page-title">Friends</h2>
 
-<input type="text" @bind="searchQuery" placeholder="Search for friends..." class="search-input" />
+<input type="text" @bind="searchQuery" placeholder="Search by name, surname or email..." class="search-input" />
 
 @if (friends == null)
 {
@@ -11,12 +11,25 @@
 }
 else
 {
-    <ul class="friend-list">
-        @foreach (var friend in FilteredFriends)
-        {
-            <li>@friend.Name</li>
-        }
-    </ul>
+    <table class="friends-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var friend in FilteredFriends)
+            {
+                <tr>
+                    <td>@friend.Name</td>
+                    <td>@friend.Surname</td>
+                    <td>@friend.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
 
 @code {
@@ -31,10 +44,16 @@ else
     private IEnumerable<Friend> FilteredFriends =>
         string.IsNullOrWhiteSpace(searchQuery)
             ? friends
-            : friends.Where(f => f.Name.Contains(searchQuery, StringComparison.OrdinalIgnoreCase));
+            : friends.Where(f =>
+                (f.Name?.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                (f.Surname?.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                (f.Email?.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) ?? false)
+            );
 
     public class Friend
     {
         public string Name { get; set; }
+        public string Surname { get; set; }
+        public string Email { get; set; }
     }
 }

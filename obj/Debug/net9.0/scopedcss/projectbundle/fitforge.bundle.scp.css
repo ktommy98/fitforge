@@ -236,17 +236,39 @@ main[b-s1b4nbr9pb] {
     border-radius: 4px;
 }
 
-.friend-list[b-tpp7pkvmig] {
-    list-style-type: none;
-    padding: 0;
+.friends-table[b-tpp7pkvmig] {
     width: 80%;
-    margin: 0 auto;
+    margin: 1rem auto;
+    border-collapse: collapse;
+    font-family: 'Anton', sans-serif;
+    color: #333;
 }
 
-.friend-list li[b-tpp7pkvmig] {
-    padding: 0.5rem;
-    border-bottom: 1px solid #ddd;
-    font-size: 1.1rem;
+.friends-table th[b-tpp7pkvmig], 
+.friends-table td[b-tpp7pkvmig] {
+    border: 1px solid #ddd;
+    padding: 0.75rem 1rem;
+    text-align: left;
+}
+
+.friends-table th[b-tpp7pkvmig] {
+    background-color: #BF3131;
+    color: #EEEEEE;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.friends-table tr:nth-child(even)[b-tpp7pkvmig] {
+    background-color: #f9f9f9;
+}
+
+.friends-table tr:nth-child(odd)[b-tpp7pkvmig] {
+    background-color: #ffffff;
+}
+
+.friends-table tr:hover[b-tpp7pkvmig] {
+    background-color: #EAD196;
+    color: #7D0A0A;
 }
 /* /Pages/Home.razor.rz.scp.css */
 .page-title[b-hzkul5j248] {
