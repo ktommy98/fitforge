@@ -11,20 +11,17 @@
 }
 else
 {
-    <div class="friends-container">
+    <ul class="friend-list">
         @foreach (var friend in FilteredFriends)
         {
-            <div class="friend-card">
-                <img src="@friend.ProfilePictureUrl" alt="@friend.Name" class="friend-image" />
-                <h3>@friend.Name</h3>
-            </div>
+            <li>@friend.Name</li>
         }
-    </div>
+    </ul>
 }
 
 @code {
-    private string searchQuery = "";
     private List<Friend> friends;
+    private string searchQuery = "";
 
     protected override async Task OnInitializedAsync()
     {
@@ -39,6 +36,5 @@ else
     public class Friend
     {
         public string Name { get; set; }
-        public string ProfilePictureUrl { get; set; }
     }
 }

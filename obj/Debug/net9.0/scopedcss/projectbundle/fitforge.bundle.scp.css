@@ -236,35 +236,17 @@ main[b-s1b4nbr9pb] {
     border-radius: 4px;
 }
 
-.friends-container[b-tpp7pkvmig] {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    padding: 1rem;
+.friend-list[b-tpp7pkvmig] {
+    list-style-type: none;
+    padding: 0;
+    width: 80%;
+    margin: 0 auto;
 }
 
-.friend-card[b-tpp7pkvmig] {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-    width: 200px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.friend-card:hover[b-tpp7pkvmig] {
-    transform: translateY(-5px);
-}
-
-.friend-image[b-tpp7pkvmig] {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 0.5rem;
+.friend-list li[b-tpp7pkvmig] {
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
 }
 /* /Pages/Home.razor.rz.scp.css */
 .page-title[b-hzkul5j248] {

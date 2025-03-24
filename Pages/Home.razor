@@ -1,6 +1,7 @@
 ﻿@page "/"
 @inject HttpClient Http
 @inject NavigationManager Navigation
+@inject IJSRuntime JS
 
 <h2 class="page-title">My Profile</h2>
 
@@ -65,9 +66,9 @@ else
         }
     }
 
-    private void EditProfile()
+    private async Task EditProfile()
     {
-        Navigation.NavigateTo("http://localhost:5173/profilesetup", true);
+        await JS.InvokeVoidAsync("open", "http://localhost:5173/profile-setup", "_self");
     }
 
     public class Profile
