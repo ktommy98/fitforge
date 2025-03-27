@@ -1,4 +1,3 @@
-// Home.jsx
 import { useState, useEffect } from "react";
 import {
   Authenticator,
@@ -9,7 +8,6 @@ import {
   View,
   Grid,
   SelectField,
-  Divider,
 } from "@aws-amplify/ui-react";
 import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
@@ -51,8 +49,7 @@ function calculateFoodMacros(amount, unit) {
   let grams = parseFloat(amount);
   if (unit === "kg") grams *= 1000;
   if (unit === "l") grams *= 1000;
-  // ml-t tekintjük 1:1 arányban g-nek
-  if (unit === "db") grams *= 50; // feltételezzük, hogy egy darab kb. 50 g
+  if (unit === "db") grams *= 50;
   const calories = grams * 2.5;
   const protein = grams * 0.1;
   const carbs = grams * 0.15;
@@ -83,12 +80,10 @@ export default function Home() {
     });
   }, []);
 
-  // Számoljuk az összes bevitt étel kalóriáit
   const totalFoodCalories = foods.reduce((acc, food) => {
     return acc + calculateFoodMacros(food.amount, food.unit).calories;
   }, 0);
 
-  // Számoljuk a maradék kalóriákat
   const remainingCalories = macros ? macros.tdee - totalFoodCalories : null;
 
   const chartData = macros
@@ -115,7 +110,6 @@ export default function Home() {
     await client.models.Food.delete({ id });
   }
 
-  // Csoportosítjuk az ételeket a meal alapján
   function groupFoodsByMeal(foods) {
     return foods.reduce((groups, food) => {
       const meal = food.meal || "others";
@@ -201,7 +195,7 @@ export default function Home() {
             </a>
             <a
               href="http://localhost:5237"
-              target="_blank"  // Ha új ablakban szeretnéd megnyitni, vagy eltávolíthatod, ha ugyanabban az ablakban akarod
+              target="_blank"
               rel="noopener noreferrer"
               style={{
                 display: "flex",
@@ -225,6 +219,31 @@ export default function Home() {
               <FaUser style={{ marginRight: "0.5rem" }} />
               Profile
             </a>
+            <a
+              href="/personaltrainers"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                color: "white",
+                textDecoration: "none",
+                marginTop: "1rem",
+                cursor: "pointer",
+                fontSize: "1rem",
+                transition: "all 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.1)";
+                e.currentTarget.style.color = "#EAD196";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+                e.currentTarget.style.color = "white";
+              }}
+            >
+              <FaDumbbell style={{ marginRight: "0.5rem" }} />
+              Personal Trainers
+            </a>
+
 
             <div style={{ flexGrow: 1 }}></div>
             <Button
@@ -479,7 +498,6 @@ export default function Home() {
   );
 }
 
-// Csoportosítás a meal alapján
 function groupFoodsByMeal(foods) {
   return foods.reduce((acc, food) => {
     const meal = food.meal || "others";

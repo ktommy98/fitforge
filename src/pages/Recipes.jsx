@@ -1,9 +1,7 @@
-// Recipes.jsx
 import React, { useState } from "react";
 import { Flex, Heading, Text, Button, Image } from "@aws-amplify/ui-react";
 import { useNavigate } from "react-router-dom";
 
-// Recipe objects in English
 const recipes = [
   {
     title: "French Toast",
@@ -218,11 +216,9 @@ const recipes = [
 export default function Recipes() {
   const navigate = useNavigate();
 
-  // State for pagination
   const [currentPage, setCurrentPage] = useState(0);
   const recipesPerPage = 2;
 
-  // Pagination logic
   const nextPage = () => {
     setCurrentPage((prev) => (prev + 1) % Math.ceil(recipes.length / recipesPerPage));
   };
@@ -269,7 +265,6 @@ export default function Recipes() {
         </Heading>
       </div>
 
-      {/* Recipe cards in a grid-like layout */}
       <Flex
         direction="row"
         wrap="wrap"
@@ -337,7 +332,6 @@ export default function Recipes() {
           ))}
       </Flex>
 
-      {/* Pagination buttons */}
       <Flex direction="row" gap="1rem" marginTop="2rem">
         <Button
           style={buttonStyle}
@@ -357,7 +351,6 @@ export default function Recipes() {
         </Button>
       </Flex>
 
-      {/* Back to main page */}
       <Button
         style={{
           ...buttonStyle,

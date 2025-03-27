@@ -1,4 +1,3 @@
-// WorkoutPlan.jsx
 import React, { useState } from "react";
 import { Flex, Heading, Button, TextField, Image, Text } from "@aws-amplify/ui-react";
 import { useNavigate } from "react-router-dom";
@@ -71,7 +70,6 @@ export default function WorkoutPlan() {
         Find the Best Exercise for You!
       </Heading>
 
-      {/* Beviteli mező */}
       <TextField
         placeholder="Enter your workout goal... (chest, biceps, legs, etc.)"
         value={inputText}
@@ -81,7 +79,6 @@ export default function WorkoutPlan() {
         marginTop="1rem"
       />
 
-      {/* Search gomb - piros alapszínnel, hover esetén sötétebb piros */}
       <Button
         onClick={handleSearch}
         variation="primary"
@@ -97,7 +94,6 @@ export default function WorkoutPlan() {
         Search
       </Button>
 
-      {/* Keresési eredmények - képek */}
       {imagesToShow.length > 0 && (
         <Flex
           direction="row"
@@ -124,7 +120,6 @@ export default function WorkoutPlan() {
         </Flex>
       )}
 
-      {/* Vissza a főoldalra gomb - piros alapszínnel */}
       <Button
         onClick={() => navigate("/")}
         variation="primary"
@@ -140,7 +135,6 @@ export default function WorkoutPlan() {
         Back to Main Page
       </Button>
 
-      {/* E-book ajánlás belső navigációval - linkek, de NEM lilák */}
       <Text fontSize="1.2rem" fontWeight="bold" marginTop="2rem" textAlign="center">
         If you want to learn from the best, try one of our ebooks:
       </Text>

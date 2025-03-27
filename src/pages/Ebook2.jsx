@@ -17,7 +17,6 @@ export default function Ebook2() {
         Below you’ll find the structured weekly workout plan with exercises, sets, reps, and rest times. Stick to progressive overload and ensure proper recovery.
       </Text>
 
-      {/* Workout Plan Table */}
       <Heading level={2} marginTop="2rem">Workout Plan</Heading>
       <Table variation="striped" marginTop="1rem">
         <TableHead>
@@ -82,7 +81,6 @@ export default function Ebook2() {
         </TableBody>
       </Table>
 
-      {/* Advanced Training Techniques */}
       <Heading level={2} marginTop="2rem">Advanced Training Techniques</Heading>
       <Text fontSize="1rem" textAlign="left" marginTop="1rem" maxWidth="800px">
         - **Drop Sets:** Reduce the weight by 20-30% after failure and continue for additional reps. Great for hypertrophy.  
@@ -92,7 +90,6 @@ export default function Ebook2() {
         - **Partial Reps:** After failure, perform shorter range-of-motion reps to squeeze out extra intensity.  
       </Text>
 
-      {/* Progressive Overload Tips */}
       <Heading level={2} marginTop="2rem">Progressive Overload Strategies</Heading>
       <Text fontSize="1rem" textAlign="left" marginTop="1rem" maxWidth="800px">
         - **Increase Weight:** Aim to add **2.5-5% more weight** each week while maintaining form.  
@@ -102,7 +99,6 @@ export default function Ebook2() {
         - **Better Mind-Muscle Connection:** Focus on strict form and controlled reps to maximize muscle activation.  
       </Text>
 
-      {/* Nutrition & Recovery Section */}
       <Heading level={2} marginTop="2rem">Nutrition & Recovery</Heading>
       <Text fontSize="1rem" textAlign="left" marginTop="1rem" maxWidth="800px">
         - **Caloric Surplus:** Ensure you consume 250-500 extra calories per day to promote muscle growth.  

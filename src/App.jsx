@@ -7,6 +7,8 @@ import Ebook1 from "./pages/Ebook1";
 import Ebook2 from "./pages/Ebook2";
 import ProfileSetup from "./pages/ProfileSetup";
 import Recipes from "./pages/Recipes";
+import PersonalTrainers from "./pages/PersonalTrainers";
+import Emily from "./pages/trainers/emily";
 
 function AppRoutes() {
   const { authStatus } = useAuthenticator((context) => [context.authStatus]);
@@ -39,6 +41,8 @@ function AppRoutes() {
       <Route path="/workoutplan" element={<WorkoutPlan />} />
       <Route path="/ebook1" element={<Ebook1 />} />
       <Route path="/ebook2" element={<Ebook2 />} />
+      <Route path="/personaltrainers" element={<PersonalTrainers />} />
+      <Route path="/trainers/emily" element={<Emily />} />
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
