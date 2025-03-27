@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./Emily.css";
+import "./emily.css";
 
 export default function Emily() {
   const navigate = useNavigate();
