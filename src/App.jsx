@@ -9,6 +9,10 @@ import ProfileSetup from "./pages/ProfileSetup";
 import Recipes from "./pages/Recipes";
 import PersonalTrainers from "./pages/PersonalTrainers";
 import Emily from "./pages/trainers/emily";
+import Lisa from "./pages/trainers/lisa";
+import John from "./pages/trainers/john";
+import Alex from "./pages/trainers/alex";
+import Mark from "./pages/trainers/mark";
 
 function AppRoutes() {
   const { authStatus } = useAuthenticator((context) => [context.authStatus]);
@@ -43,6 +47,10 @@ function AppRoutes() {
       <Route path="/ebook2" element={<Ebook2 />} />
       <Route path="/personaltrainers" element={<PersonalTrainers />} />
       <Route path="/trainers/emily" element={<Emily />} />
+      <Route path="/trainers/lisa" element={<Lisa />} />
+      <Route path="/trainers/john" element={<John />} />
+      <Route path="/trainers/alex" element={<Alex />} />
+      <Route path="/trainers/mark" element={<Mark />} />
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );

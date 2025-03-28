@@ -1,28 +1,26 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./emily.css";
+import "./TrainerDetails.css";
 
 export default function Emily() {
   const navigate = useNavigate();
 
   return (
-    <div className="emily-page">
-      <div className="emily-container">
-        <img src="/src/images/emily.jfif" alt="Emily" className="emily-image" />
-        <div className="emily-info">
-          <h2>Emily</h2>
+    <div className="trainer-details-page">
+      <div className="trainer-details-container">
+        <img src="/images/emily.jpg" alt="Emily" className="trainer-details-image" />
+        <div className="trainer-details-info">
+          <h2>Emily Carter</h2>
           <p>
-            Hello, I'm Emily! I'm specialized in cardio and weight loss programs.
-            I help clients achieve their goals with structured HIIT sessions, 
-            balanced nutrition guidance, and ongoing support.
+            Hello, I'm Emily! I'm specialized in cardio and weight loss programs. I help clients achieve their goals with structured HIIT sessions, balanced nutrition guidance, and ongoing support.
           </p>
           <p>
-            If you want to transform your lifestyle, boost your endurance, and
-            burn calories effectively, I'm here to guide you every step of the way.
+            My training approach is holistic, combining effective workouts with sustainable lifestyle changes. I believe in empowering you to make healthier choices every day.
           </p>
-          <p>
-            Contact: emily@example.com
+          <p className="quote">
+            "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle."
           </p>
+          <p>Contact: emily@example.com</p>
           <button className="back-button" onClick={() => navigate("/personaltrainers")}>
             Back to Personal Trainers
           </button>
