@@ -194,6 +194,30 @@ export default function Home() {
               Workout Plan
             </a>
             <a
+              href="/personaltrainers"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                color: "white",
+                textDecoration: "none",
+                marginTop: "1rem",
+                cursor: "pointer",
+                fontSize: "1rem",
+                transition: "all 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.1)";
+                e.currentTarget.style.color = "#EAD196";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+                e.currentTarget.style.color = "white";
+              }}
+            >
+              <FaDumbbell style={{ marginRight: "0.5rem" }} />
+              Personal Trainers
+            </a>
+            <a
               href="http://localhost:5237"
               target="_blank"
               rel="noopener noreferrer"
@@ -219,32 +243,6 @@ export default function Home() {
               <FaUser style={{ marginRight: "0.5rem" }} />
               Profile
             </a>
-            <a
-              href="/personaltrainers"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                color: "white",
-                textDecoration: "none",
-                marginTop: "1rem",
-                cursor: "pointer",
-                fontSize: "1rem",
-                transition: "all 0.3s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "scale(1.1)";
-                e.currentTarget.style.color = "#EAD196";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "scale(1)";
-                e.currentTarget.style.color = "white";
-              }}
-            >
-              <FaDumbbell style={{ marginRight: "0.5rem" }} />
-              Personal Trainers
-            </a>
-
-
             <div style={{ flexGrow: 1 }}></div>
             <Button
               onClick={() => {

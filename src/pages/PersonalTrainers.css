@@ -10,7 +10,7 @@
   
   .trainers-title {
     font-family: 'Anton', sans-serif;
-    font-size: 2rem;
+    font-size: 3rem;
     color: #BF3131;
     margin: 0;
   }
@@ -25,7 +25,7 @@
   .trainer-card {
     position: relative;
     width: 220px;
-    height: 280px;
+    height: 300px;
     overflow: hidden;
     text-align: center;
     border-radius: 10px;
@@ -55,7 +55,6 @@
     letter-spacing: 1px;
   }
   
-  /* Overlay hatás hover esetén */
   .trainer-overlay {
     position: absolute;
     top: 0;
@@ -85,7 +84,6 @@
     text-transform: uppercase;
   }
   
-  /* Visszalépés gomb */
   .back-button-container {
     text-align: center;
     margin-top: 2rem;
