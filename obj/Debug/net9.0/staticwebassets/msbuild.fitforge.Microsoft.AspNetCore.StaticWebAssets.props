@@ -48,8 +48,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ApplicationBundle</AssetTraitValue>
-      <Fingerprint>f3x1ic052s</Fingerprint>
-      <Integrity>NWCIJWhiInudV7HtPwX1ZaQceKoOmn758tqz8JfMrUs=</Integrity>
+      <Fingerprint>9qkxbqiv9t</Fingerprint>
+      <Integrity>z6VT/xwbBODxkhWFUnL0dF+Xac/EwygGsxKrRq2ihGY=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fitforge.styles.css'))</OriginalItemSpec>
@@ -210,8 +210,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>s04xzhgga9</Fingerprint>
-      <Integrity>nHlwGxAYdBgvIUop6MziWcf1mVD96uR1OXpLgAAqYFU=</Integrity>
+      <Fingerprint>zdmn4dhdxq</Fingerprint>
+      <Integrity>F/kD0k//8c9JJiHnZwBTjaQ2GhrfTGA4+Gpvv+hUfl0=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</OriginalItemSpec>

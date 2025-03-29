@@ -32,13 +32,11 @@
 
     protected override async Task OnInitializedAsync()
     {
-        // Létrehozzuk a SignalR kapcsolatot a "chathub" végponthoz
         hubConnection = new HubConnectionBuilder()
-            .WithUrl("http://localhost:5157/chathub") // ASP.NET Core fut portja
+            .WithUrl("http://localhost:5157/chathub")
             .WithAutomaticReconnect()
             .Build();
 
-        // Ha a szerver elküld egy "ReceiveMessage" eseményt, akkor frissítjük a listát
         hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
         {
             Messages.Add(new MessageDto { UserName = user, Text = message });
