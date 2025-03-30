@@ -374,6 +374,11 @@ export default function Home() {
                   <p style={{ marginTop: "0.5rem", fontSize: "1rem" }}>
                     <strong>Macros:</strong> Protein {macros.proteinGrams} g, Carb {macros.carbsGrams} g, Fat {macros.fatGrams} g
                   </p>
+                  {profileData && profileData.goal && (
+                  <div style={{ marginTop: "0rem", fontSize: "1rem"}}>
+                    <strong>Your goal:</strong> {profileData.goal}
+                  </div>
+                )}
                 </Flex>
               </div>
             )}

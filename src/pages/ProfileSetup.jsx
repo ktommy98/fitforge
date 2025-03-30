@@ -11,6 +11,7 @@ export default function ProfileSetup({ onProfileComplete }) {
     weight: "",
     targetWeight: "",
     exerciseLevel: "",
+    goal: ""
   });
 
   const handleChange = (e) => {
@@ -134,11 +135,25 @@ export default function ProfileSetup({ onProfileComplete }) {
             required
             onChange={handleChange}
             value={formData.exerciseLevel}
-            style={{ marginBottom: "1.5rem" }}
+            style={{ marginBottom: "1rem" }}
           >
             <option value="beginner">Beginner</option>
             <option value="intermediate">Intermediate</option>
             <option value="advanced">Advanced</option>
+          </SelectField>
+
+          <SelectField
+            name="goal"
+            label="Goal"
+            placeholder="Select your goal"
+            required
+            onChange={handleChange}
+            value={formData.goal}
+            style={{ marginBottom: "1rem" }}
+          >
+            <option value="lose weight">Lose Weight</option>
+            <option value="gain weight">Gain Weight</option>
+            <option value="maintain">Maintain</option>
           </SelectField>
 
           <Button
