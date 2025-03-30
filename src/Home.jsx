@@ -122,9 +122,26 @@ export default function Home() {
 
   return (
     <Authenticator>
-      {({ signOut }) => (
-        <div style={{ display: "flex" }}>
-          {/* Bal oldali menüsor */}
+      {({ user, signOut }) => (
+        // Külső konténer, hogy absolute-elemet tudjunk elhelyezni
+        <div style={{ position: "relative", minHeight: "100vh" }}>
+          {/* Jobb felső sarokban megjelenő e-mail */}
+          <div style={{
+            position: "absolute",
+            top: "1rem",
+            right: "1rem",
+            fontWeight: "bold",
+            fontSize: "0.9rem"
+        }}>
+          Signed in as: 
+            <tr>
+            <span style={{ color: "#FF5733" }}>{user?.signInDetails?.loginId ?? "Anonymous"}</span>
+            </tr>
+        </div>
+
+          {/* Bal oldali menüsor és a fő tartalom */}
+          <div style={{ display: "flex" }}>
+            {/* Bal oldali menüsor */}
           <div
             style={{
               width: "250px",
@@ -490,6 +507,7 @@ export default function Home() {
                 </div>
               ))}
           </Flex>
+          </div>
         </div>
       )}
     </Authenticator>
