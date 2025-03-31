@@ -48,8 +48,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ApplicationBundle</AssetTraitValue>
-      <Fingerprint>9qkxbqiv9t</Fingerprint>
-      <Integrity>z6VT/xwbBODxkhWFUnL0dF+Xac/EwygGsxKrRq2ihGY=</Integrity>
+      <Fingerprint>wc815d7gl6</Fingerprint>
+      <Integrity>kMlFuddYJXkWwNO6NUxvvsH9wsKDUqIICPf+x1ncYI8=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fitforge.styles.css'))</OriginalItemSpec>

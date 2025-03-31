@@ -13,6 +13,7 @@ import Lisa from "./pages/trainers/lisa";
 import John from "./pages/trainers/john";
 import Alex from "./pages/trainers/alex";
 import Mark from "./pages/trainers/mark";
+import Forum from "./pages/Forum";
 
 function AppRoutes() {
   const { authStatus } = useAuthenticator((context) => [context.authStatus]);
@@ -51,6 +52,7 @@ function AppRoutes() {
       <Route path="/trainers/john" element={<John />} />
       <Route path="/trainers/alex" element={<Alex />} />
       <Route path="/trainers/mark" element={<Mark />} />
+      <Route path="/forum" element={<Forum />} />
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );

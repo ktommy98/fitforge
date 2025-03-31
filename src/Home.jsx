@@ -13,7 +13,7 @@ import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
 import { generateClient } from "aws-amplify/data";
 import outputs from "../amplify_outputs.json";
-import { FaDumbbell, FaAppleAlt, FaUtensils, FaRunning, FaUser } from "react-icons/fa";
+import { FaDumbbell, FaAppleAlt, FaUtensils, FaRunning, FaUser, FaComment } from "react-icons/fa";
 import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
 
 Amplify.configure(outputs);
@@ -123,7 +123,6 @@ export default function Home() {
   return (
     <Authenticator>
       {({ user, signOut }) => (
-        // Külső konténer, hogy absolute-elemet tudjunk elhelyezni
         <div style={{ position: "relative", minHeight: "100vh" }}>
           {/* Jobb felső sarokban megjelenő e-mail */}
           <div style={{
@@ -133,15 +132,12 @@ export default function Home() {
             fontWeight: "bold",
             fontSize: "0.9rem"
         }}>
-          Signed in as: 
-            <tr>
+          Signed in as:<br/>
             <span style={{ color: "#FF5733" }}>{user?.signInDetails?.loginId ?? "Anonymous"}</span>
-            </tr>
         </div>
 
           {/* Bal oldali menüsor és a fő tartalom */}
           <div style={{ display: "flex" }}>
-            {/* Bal oldali menüsor */}
           <div
             style={{
               width: "250px",
@@ -235,6 +231,29 @@ export default function Home() {
               Personal Trainers
             </a>
             <a
+              href="/forum"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                color: "white",
+                textDecoration: "none",
+                marginTop: "1rem",
+                cursor: "pointer",
+                fontSize: "1rem",
+                transition: "all 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.1)";
+                e.currentTarget.style.color = "#EAD196";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+                e.currentTarget.style.color = "white";
+              }}
+            >
+              <FaComment style={{ marginRight: "0.5rem" }} />Forum
+              </a>
+            <a
               href="http://localhost:5237"
               target="_blank"
               rel="noopener noreferrer"
@@ -289,9 +308,7 @@ export default function Home() {
             >
               Sign Out
             </Button>
-
           </div>
-
           {/* Fő tartalom */}
           <Flex
             justifyContent="center"
@@ -375,14 +392,13 @@ export default function Home() {
                     <strong>Macros:</strong> Protein {macros.proteinGrams} g, Carb {macros.carbsGrams} g, Fat {macros.fatGrams} g
                   </p>
                   {profileData && profileData.goal && (
-                  <div style={{ marginTop: "0rem", fontSize: "1rem"}}>
+                  <div style={{fontSize: "1rem"}}>
                     <strong>Your goal:</strong> {profileData.goal}
                   </div>
                 )}
                 </Flex>
               </div>
             )}
-
             <hr
               style={{
                 width: "80%",
@@ -391,7 +407,6 @@ export default function Home() {
                 margin: "2rem auto",
               }}
             />
-
             {/* Food Tracking szekció */}
             <div
               style={{
@@ -416,7 +431,6 @@ export default function Home() {
               </Heading>
               <FaAppleAlt style={{ color: "#7D0A0A", fontSize: "1.5rem" }} />
             </div>
-
             {/* Food Tracking űrlap - napszak megadásával */}
             <View as="form" margin="1rem 0" onSubmit={createFood}>
               <Flex direction="column" justifyContent="center" gap="1rem" padding="1rem">
@@ -431,7 +445,6 @@ export default function Home() {
                     <option value="db">Pieces (pcs)</option>
                   </SelectField>
                 </Flex>
-                {/* SelectField az étkezés megadásához */}
                 <SelectField name="meal" labelHidden required defaultValue="breakfast">
                   <option value="breakfast">Breakfast</option>
                   <option value="lunch">Lunch</option>
@@ -455,8 +468,6 @@ export default function Home() {
                 </Button>
               </Flex>
             </View>
-
-            {/* Megjelenítés: Csoportosítva a meal alapján */}
             {Object.keys(groupedFoods).length > 0 &&
               Object.keys(groupedFoods).map((mealType) => (
                 <div key={mealType} style={{ width: "100%" }}>
