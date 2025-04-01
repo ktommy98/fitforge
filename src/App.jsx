@@ -14,6 +14,7 @@ import John from "./pages/trainers/john";
 import Alex from "./pages/trainers/alex";
 import Mark from "./pages/trainers/mark";
 import Forum from "./pages/Forum";
+import { ForumProvider } from "./pages/ForumContext";
 
 function AppRoutes() {
   const { authStatus } = useAuthenticator((context) => [context.authStatus]);
@@ -61,7 +62,9 @@ function AppRoutes() {
 export default function App() {
   return (
     <Authenticator>
-      <AppRoutes />
+      <ForumProvider>
+        <AppRoutes />
+      </ForumProvider>
     </Authenticator>
   );
 }
