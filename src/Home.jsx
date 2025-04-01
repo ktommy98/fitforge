@@ -44,7 +44,7 @@ function calculateMacros(tdee) {
   };
 }
 
-// Segédfüggvény az étel makróinak kiszámításához
+// Ez a függvény számolja ki az ételek makróit
 function calculateFoodMacros(amount, unit) {
   let grams = parseFloat(amount);
   if (unit === "kg") grams *= 1000;
@@ -124,7 +124,6 @@ export default function Home() {
     <Authenticator>
       {({ user, signOut }) => (
         <div style={{ position: "relative", minHeight: "100vh" }}>
-          {/* Jobb felső sarokban megjelenő e-mail */}
           <div style={{
             position: "absolute",
             top: "1rem",
@@ -431,7 +430,7 @@ export default function Home() {
               </Heading>
               <FaAppleAlt style={{ color: "#7D0A0A", fontSize: "1.5rem" }} />
             </div>
-            {/* Food Tracking űrlap - napszak megadásával */}
+            {/* Food Tracking űrlap napszakosan */}
             <View as="form" margin="1rem 0" onSubmit={createFood}>
               <Flex direction="column" justifyContent="center" gap="1rem" padding="1rem">
                 <TextField name="name" placeholder="Food Name" labelHidden variation="quiet" required />

@@ -33,12 +33,14 @@ else
 }
 
 @code {
-    private List<Friend> friends;
+    private List<Friend> friends = new();
     private string searchQuery = "";
 
     protected override async Task OnInitializedAsync()
     {
-        friends = await Http.GetFromJsonAsync<List<Friend>>("http://localhost:5058/api/friends");
+        friends = (await Http.GetFromJsonAsync<List<Friend>>("http://localhost:5058/api/friends"))
+          ?? new List<Friend>();
+
     }
 
     private IEnumerable<Friend> FilteredFriends =>

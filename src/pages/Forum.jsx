@@ -7,7 +7,6 @@ export default function Forum() {
   const [newMessage, setNewMessage] = useState("");
   const navigate = useNavigate();
 
-  // Üzenetek betöltése a localStorage-ből (így maradnak a navigációk között)
   useEffect(() => {
     const savedMessages = localStorage.getItem("forumMessages");
     if (savedMessages) {
@@ -15,14 +14,12 @@ export default function Forum() {
     }
   }, []);
 
-  // Minden üzenet módosítás után frissítjük a localStorage-t
   useEffect(() => {
     localStorage.setItem("forumMessages", JSON.stringify(messages));
   }, [messages]);
 
   const handleSend = (userEmail) => {
     if (newMessage.trim() !== "") {
-      // Csak az "@" jel utáni részt használjuk fel a megjelenítéshez
       const emailParts = userEmail.split("@");
       const displayUser = emailParts.length > 1 ? emailParts[0] : userEmail;
 
@@ -39,22 +36,18 @@ export default function Forum() {
   return (
     <Authenticator>
       {({ user }) => {
-        // Feltételezzük, hogy a bejelentkezett felhasználó email címe a user.attributes.email-ben található
         const email = user?.signInDetails?.loginId  || "anonymous@example.com";
-        // Csak az "@" utánit jelenítjük meg
         const emailDomain = email.includes("@") ? email.split("@")[0] : email;
 
         return (
           <div style={{ padding: "2rem", fontFamily: "sans-serif", backgroundColor: "#f0f0f0", minHeight: "100vh" }}>
             <h1 style={{ textAlign: "center", color: "#BF3131" }}>Forum</h1>
             
-            {/* Megjelenítjük a bejelentkezett felhasználó email címéből az "@" utáni részt különálló elemként */}
             <div style={{ textAlign: "center", marginBottom: "1rem" }}>
               <span style={{ fontWeight: "bold", fontSize: "1rem" }}>Signed in as: </span>
               <span style={{ color: "#FF5733", fontWeight: "bold", fontSize: "1.1rem" }}>{emailDomain}</span>
             </div>
             
-            {/* Üzenetek megjelenítése */}
             <div style={{
               border: "1px solid #ccc",
               borderRadius: "5px",
@@ -71,7 +64,6 @@ export default function Forum() {
               ))}
             </div>
 
-            {/* Üzenetküldés űrlap */}
             <div style={{ marginTop: "1rem" }}>
               <textarea
                 value={newMessage}
@@ -103,7 +95,6 @@ export default function Forum() {
               </div>
             </div>
 
-            {/* Back to Main Page gomb */}
             <div style={{ marginTop: "1.5rem", textAlign: "center" }}>
               <button
                 onClick={() => navigate("/")}

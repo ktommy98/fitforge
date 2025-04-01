@@ -8,10 +8,8 @@
 @if (profile != null)
 {
     <div class="profile-card">
-        <!-- Profil kép -->
         <img src="/images/profile_picture.avif" alt="Profile Picture" class="profile-image" />
 
-        <!-- Profil adatok -->
         <div class="profile-details">
             <div class="profile-field">
                 <span class="field-label">Age:</span>
@@ -46,11 +44,12 @@ else
 }
 
 @code {
-    private Profile profile;
+    private Profile profile = new();
 
     protected override async Task OnInitializedAsync()
     {
-        profile = await Http.GetFromJsonAsync<Profile>("http://localhost:5058/api/profile");
+        profile = await Http.GetFromJsonAsync<Profile>("http://localhost:5058/api/profile") 
+            ?? new Profile();
         
         if (profile == null)
         {
@@ -77,7 +76,7 @@ else
         public int Height { get; set; }
         public int Weight { get; set; }
         public int TargetWeight { get; set; }
-        public string ExerciseLevel { get; set; }
+        public string? ExerciseLevel { get; set; }
         public string ProfilePictureUrl { get; set; } = "https://via.placeholder.com/150";
     }
 }

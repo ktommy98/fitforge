@@ -9,7 +9,8 @@
         <div class="challenge-card" style="background-color:@challenge.Color" @onclick="@(() => OnCardClicked(challenge))">
             <i class="@challenge.Icon" style="font-size: 2.5rem; margin-bottom: 0.5rem;"></i>
             <h3>@challenge.Label</h3>
-            @if (GlobalStartTimes.ContainsKey(challenge.Label))
+            @if (challenge.Color != null && challenge.Label != null && GlobalStartTimes.ContainsKey(challenge.Label))
+
             {
                 <div style="margin-top: 1rem;">
                     <p style="font-size:1.1rem; font-weight:bold;">@DisplayTimer(challenge.Label)</p>
@@ -41,7 +42,7 @@
 
     private void OnCardClicked(Challenge challenge)
     {
-        if (!GlobalStartTimes.ContainsKey(challenge.Label))
+        if (challenge?.Label != null && !GlobalStartTimes.ContainsKey(challenge.Label))
         {
             GlobalStartTimes[challenge.Label] = DateTime.Now;
         }
@@ -49,7 +50,7 @@
 
     private void StopTimerForChallenge(Challenge challenge)
     {
-        if (GlobalStartTimes.ContainsKey(challenge.Label))
+        if (challenge?.Label != null && GlobalStartTimes.ContainsKey(challenge.Label))
         {
             GlobalStartTimes.Remove(challenge.Label);
             StateHasChanged();
@@ -77,14 +78,15 @@
     {
         if (firstRender)
         {
-            _ = Task.Run(async () =>
+            await Task.Run(async () =>
             {
                 while (true)
                 {
                     await Task.Delay(1000);
-                    InvokeAsync(StateHasChanged);
+                    await InvokeAsync(StateHasChanged);
                 }
             });
         }
     }
+
 }
